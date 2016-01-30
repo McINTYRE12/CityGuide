@@ -9,16 +9,16 @@ namespace CityGuide.Controllers
 {
     public class HomeController : Controller
     {
-        private ObjectivesWorkerService _objWorkerSvc;
+        private CategoriesWorkerService _catWorkerSvc;
 
-        public HomeController(ObjectivesWorkerService objService)
+        public HomeController(CategoriesWorkerService catService)
         {
-            _objWorkerSvc = objService;
+            _catWorkerSvc = catService;
         }
 
         public ActionResult Index()
         {
-            var viewModels = _objWorkerSvc.GetAllObjectives();
+            var viewModels = _catWorkerSvc.GetAllCategories();
             return View(viewModels);
         }
 

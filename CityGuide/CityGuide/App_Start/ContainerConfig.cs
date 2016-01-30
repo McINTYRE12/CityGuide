@@ -20,6 +20,7 @@ namespace CityGuide.App_Start
             builder.RegisterType<CityGuideContext>().InstancePerRequest();
             builder.RegisterType<CityGuideDatabase>().As<ICityGuideDatabase>().InstancePerRequest();
             builder.RegisterType<ObjectivesWorkerService>().InstancePerRequest();
+            builder.RegisterType<CategoriesWorkerService>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

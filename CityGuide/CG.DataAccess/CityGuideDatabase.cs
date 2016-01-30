@@ -20,9 +20,16 @@ namespace CG.DataAccess
 
         public List<Objective> GetAllObjectives()
         {
-            IQueryable<Objective> objs = _ctx.Objectives;//.Where(o => o.Description.StartsWith("a"));
-                                                         //  objs = objs.Where(o => o.Description.StartsWith("a")).OrderBy(o => o.Description);
+            IQueryable<Objective> objs = _ctx.Objectives;
+
             return objs.ToList();
+        }
+
+        public List<Category> GetAllCategories()
+        {
+            IQueryable<Category> cats = _ctx.Categories;
+
+            return cats.ToList();
         }
     }
 }
