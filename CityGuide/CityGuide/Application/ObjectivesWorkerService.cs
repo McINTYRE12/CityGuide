@@ -24,7 +24,7 @@ namespace CityGuide.Application
             // 3. map list of objectives to view model class
             return objectives.Select(o => new ObjectiveViewModel
             {
-                About = o.Description
+                Name = o.Description
             }).ToList();
         }
     }

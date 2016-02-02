@@ -7,6 +7,10 @@ namespace CityGuide.ViewModels
 {
     public class ObjectiveViewModel
     {
-        public string About { get; set; }
+        public string Name { get; set; }
+        public int Id { get; set; }
+        public int Score { get; set; }
+        public int Category { get; set; }
+        public string Description { get; set; }
     }
 }

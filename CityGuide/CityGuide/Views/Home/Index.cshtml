@@ -6,7 +6,7 @@
 <div class="main">
     @foreach (var cat in Model)
     {
-        <div class="category-square">@cat.Name</div>
+        <div class="category-square">@Html.ActionLink(@cat.Name, "Details/" + @cat.Id, "Category")</div>
     }
     <div style="clear: both"></div>
 </div>

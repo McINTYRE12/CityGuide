@@ -21,7 +21,8 @@ namespace CityGuide.Application
 
             return categories.Select(o => new CategoryViewModel
             {
-                Name = o.Name
+                Name = o.Name,
+                Id = o.Id
             }).ToList();
         }
     }
