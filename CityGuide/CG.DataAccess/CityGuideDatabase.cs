@@ -31,5 +31,12 @@ namespace CG.DataAccess
 
             return cats.ToList();
         }
+        public List<Objective> GetObjectivesFromCategory(int id)
+        {
+
+            IQueryable<Objective> objs = _ctx.Objectives;
+
+            return objs.ToList();
+        }
     }
 }

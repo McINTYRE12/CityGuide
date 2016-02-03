@@ -24,7 +24,17 @@ namespace CityGuide.Application
             // 3. map list of objectives to view model class
             return objectives.Select(o => new ObjectiveViewModel
             {
-                Name = o.Description
+                Name = o.Name
+            }).ToList();
+        }
+        public List<ObjectiveViewModel> GetObjectivesFromCategory(int id)
+        {
+
+            List<Objective> objectives = _db.GetAllObjectives();
+
+            return objectives.Where(o => o.Category == id).Select(o => new ObjectiveViewModel
+            {
+                Name = o.Name
             }).ToList();
         }
     }
