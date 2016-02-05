@@ -30,13 +30,23 @@ textarea {
 }
 
 .category-square{
-    width: 48%;
+   width: 50%;
     float: left;
     height: 0;
     border-style: solid;
-    border-width: 2px;
-    margin: 0px 3px 3px 0px;
+    border-width: 1px 1px 1px 1px;
     text-align: center;
     padding-bottom: 25%;
     padding-top:15%;
+}
+
+.objective-square{
+    width: 50%;
+    float: left;
+    height: 0;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    padding-top:20%;
+    padding-bottom:8%;
+    padding-left:3px;
 }

@@ -4,23 +4,12 @@
     ViewBag.Title = Html.DisplayFor(model => model.Name);
 }
 
-<h2>Details</h2>
-
+<h3>@Html.DisplayFor(model => model.Name)</h3>
+<hr />
 <div>
-    <h4>@Html.DisplayFor(model => model.Name)</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-    </dl>
     @foreach(var o in ViewBag.Objectives)
     {
-        <div>@o.Name</div>
+        <div class="objective-square">@o.Name</div>
     }
+    <div style="clear:both"></div>
 </div>

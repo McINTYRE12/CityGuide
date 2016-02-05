@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201602022143241_UpdatedObjectivesTableToIncludeCategoryAndScore.Designer.cs">
       <DependentUpon>201602022143241_UpdatedObjectivesTableToIncludeCategoryAndScore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602041207288_AddedPhotosTable.cs" />
+    <Compile Include="Migrations\201602041207288_AddedPhotosTable.Designer.cs">
+      <DependentUpon>201602041207288_AddedPhotosTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602022143241_UpdatedObjectivesTableToIncludeCategoryAndScore.resx">
       <DependentUpon>201602022143241_UpdatedObjectivesTableToIncludeCategoryAndScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602041207288_AddedPhotosTable.resx">
+      <DependentUpon>201602041207288_AddedPhotosTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

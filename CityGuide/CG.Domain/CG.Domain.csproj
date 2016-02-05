@@ -45,6 +45,7 @@
     <Compile Include="Category.cs" />
     <Compile Include="ICityGuideDatabase.cs" />
     <Compile Include="Objective.cs" />
+    <Compile Include="Photo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

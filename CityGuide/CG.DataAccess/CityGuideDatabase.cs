@@ -38,5 +38,11 @@ namespace CG.DataAccess
 
             return objs.ToList();
         }
+        public List<Photo> GetAllPhotos()
+        {
+            IQueryable<Photo> photos = _ctx.Photos;
+
+            return photos.ToList();
+        }
     }
 }

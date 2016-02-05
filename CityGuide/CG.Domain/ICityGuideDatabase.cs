@@ -7,6 +7,7 @@ namespace CG.Domain
         List<Objective> GetAllObjectives();
         List<Objective> GetObjectivesFromCategory(int id);
         List<Category> GetAllCategories();
+        List<Photo> GetAllPhotos();
 
         void Commit();
     }

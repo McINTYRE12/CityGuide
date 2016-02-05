@@ -16,5 +16,6 @@ namespace CG.DataAccess
 
         public virtual DbSet<Objective> Objectives { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Photo> Photos { get; set; }
     }
 }
