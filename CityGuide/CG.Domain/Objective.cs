@@ -1,4 +1,6 @@
-﻿namespace CG.Domain
+﻿using System.Collections.Generic;
+
+namespace CG.Domain
 {
     public class Objective
     {
@@ -7,5 +9,6 @@
         public string Name { get; set; }
         public int Score { get; set; }
         public int Category { get; set; }
+        public List<Photo> Photos { get; set; }
     }
 }

@@ -20,7 +20,8 @@ namespace CityGuide.Application
 
             // 2. cal method on DB "object" to get all objetives
             List<Objective> objectives = _db.GetAllObjectives();
-            
+            List<Photo> photos = _db.GetAllPhotos();
+
             // 3. map list of objectives to view model class
             return objectives.Select(o => new ObjectiveViewModel
             {
