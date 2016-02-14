@@ -44,5 +44,11 @@ namespace CG.DataAccess
 
             return photos.ToList();
         }
+        public List<Photo> GetPhotosOfObjective(int id)
+        {
+            IQueryable<Photo> photos = _ctx.Photos;
+
+            return photos.ToList();
+        }
     }
 }

@@ -9,6 +9,6 @@ namespace CG.Domain
         public string Name { get; set; }
         public int Score { get; set; }
         public int Category { get; set; }
-        public List<Photo> Photos { get; set; }
+        public virtual List<Photo> Photos { get; set; }
     }
 }

@@ -9,6 +9,5 @@ namespace CityGuide.ViewModels
     {
         public int Id;
         public string url;
-        public int objId;
     }
 }

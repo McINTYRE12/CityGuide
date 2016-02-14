@@ -9,7 +9,7 @@
 <div>
     @foreach(var o in ViewBag.Objectives)
     {
-        <div class="objective-square">@o.Name</div>
+        <div class="objective-square" style="background-image:url(@o.Photos[0].url)">@o.Name</div>
     }
     <div style="clear:both"></div>
 </div>

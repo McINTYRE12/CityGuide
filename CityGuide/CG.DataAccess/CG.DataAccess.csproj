@@ -74,6 +74,14 @@
     <Compile Include="Migrations\201602041207288_AddedPhotosTable.Designer.cs">
       <DependentUpon>201602041207288_AddedPhotosTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602091025595_databaseFix.cs" />
+    <Compile Include="Migrations\201602091025595_databaseFix.Designer.cs">
+      <DependentUpon>201602091025595_databaseFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602091418372_DeletedObjIdFromPhotoTable.cs" />
+    <Compile Include="Migrations\201602091418372_DeletedObjIdFromPhotoTable.Designer.cs">
+      <DependentUpon>201602091418372_DeletedObjIdFromPhotoTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +110,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602041207288_AddedPhotosTable.resx">
       <DependentUpon>201602041207288_AddedPhotosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602091025595_databaseFix.resx">
+      <DependentUpon>201602091025595_databaseFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602091418372_DeletedObjIdFromPhotoTable.resx">
+      <DependentUpon>201602091418372_DeletedObjIdFromPhotoTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
