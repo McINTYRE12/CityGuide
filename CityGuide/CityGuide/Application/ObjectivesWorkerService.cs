@@ -25,9 +25,11 @@ namespace CityGuide.Application
             return objectives.Select(o => new ObjectiveViewModel
             {
                 Name = o.Name,
-                Photos = o.Photos
+                Photos = o.Photos,
+                Id = o.Id
             }).ToList();
         }
+
         public List<ObjectiveViewModel> GetObjectivesFromCategory(int id)
         {
 
@@ -37,7 +39,8 @@ namespace CityGuide.Application
             return objectives.Where(o => o.Category == id).Select(o => new ObjectiveViewModel
             {
                 Name = o.Name,
-                Photos = o.Photos
+                Photos = o.Photos,
+                Id = o.Id
             }).ToList();
         }
     }

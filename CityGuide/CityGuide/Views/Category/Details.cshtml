@@ -5,11 +5,13 @@
 }
 
 <h3>@Html.DisplayFor(model => model.Name)</h3>
+
 <hr />
+
 <div>
     @foreach(var o in ViewBag.Objectives)
     {
-        <div class="objective-square" style="background-image:url(@o.Photos[0].url)">@o.Name</div>
+        <div class="objective-square" style="background: url(@o.Photos[0].Url)  no-repeat center center; background-size:cover">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Objective")</div>
     }
     <div style="clear:both"></div>
 </div>

@@ -21,7 +21,7 @@ namespace CityGuide.Application
 
             return photos.Select(o => new PhotoViewModel
             {
-                url = o.url,
+                Url = o.Url,
                 Id = o.Id
             }).ToList();
         }

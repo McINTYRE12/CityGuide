@@ -9,6 +9,6 @@ namespace CG.Domain
     public class Photo
     {
         public int Id { get; set; }
-        public string url { get; set; }
+        public string Url { get; set; }
     }
 }
