@@ -4,8 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Cluj-Napoca City Guide</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/star-rating.css")
+    @Styles.Render("~/Content/star-rating.min.css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/star-rating.js")
+    @Scripts.Render("~/Scripts/star-rating.min.js")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">

@@ -26,6 +26,7 @@ namespace CityGuide.Application
             {
                 Name = o.Name,
                 Photos = o.Photos,
+                Score = o.Score,
                 Id = o.Id
             }).ToList();
         }
@@ -40,6 +41,7 @@ namespace CityGuide.Application
             {
                 Name = o.Name,
                 Photos = o.Photos,
+                Score = o.Score,
                 Id = o.Id
             }).ToList();
         }
