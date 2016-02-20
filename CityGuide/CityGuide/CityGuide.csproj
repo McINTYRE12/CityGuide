@@ -152,8 +152,6 @@
     <Compile Include="ViewModels\PhotoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\star-rating.css" />
-    <Content Include="Content\star-rating.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

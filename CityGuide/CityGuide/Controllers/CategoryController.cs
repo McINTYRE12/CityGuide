@@ -22,7 +22,7 @@ namespace CityGuide.Controllers
             _objWorkerSvc = objService;
         }
 
-        public ActionResult Details(int? id)
+        public ActionResult Details(int? id, string searchString)
         {
             if (id == null)
             {
@@ -33,7 +33,12 @@ namespace CityGuide.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Objectives = _objWorkerSvc.GetObjectivesFromCategory(id.Value);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                ViewBag.Objectives = _objWorkerSvc.GetObjectivesFromSearch(id.Value, searchString);
+            }
+            else
+                ViewBag.Objectives = _objWorkerSvc.GetObjectivesFromCategory(id.Value);
             return View(category);
         }
         

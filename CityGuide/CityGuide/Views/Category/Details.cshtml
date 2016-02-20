@@ -7,13 +7,35 @@
 <h3>@Html.DisplayFor(model => model.Name)</h3>
 
 <hr />
+@using (Html.BeginForm())
+{
+    <p>
+        Title: @Html.TextBox("searchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+}
 
+@using (Html.BeginForm())
+{
+    <p>
+        Sort by:
+        <select id="sortOrder" name="sortOrder">
+            <option value="name_desc">Name descending</option>
+            <option value="score">Score</option>
+            <option value="score_desc">Score descending</option>
+            <option value="">Name</option>
+        </select>
+        <input type="submit" />
+        
+    </p>
+}
+ 
 <div>
     @foreach (var o in ViewBag.Objectives)
     {
-        <div class="objective-square" style="background: url(@o.Photos[0].Url)  no-repeat center center; background-size:cover">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Objective")
-            <input id="input-3" value="@o.Score" class="rating">
-        </div>
+        <div class="objective-square" style="background: url(@o.Photos[0].Url)  no-repeat center center; background-size:cover">
+            @Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Objective")
+            </div>
     }
     <div style="clear:both"></div>
 </div>
