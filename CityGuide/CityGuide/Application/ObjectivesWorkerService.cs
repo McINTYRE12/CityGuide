@@ -29,7 +29,7 @@ namespace CityGuide.Application
             }).ToList();
         }
         [HttpPost]
-        public List<ObjectiveViewModel> GetObjectivesFromCategory(int id, string sortOrder = "")
+        public List<ObjectiveViewModel> GetObjectivesFromCategory(int id, string sortOrder)
         {
 
             List<Objective> objectives = _db.GetAllObjectives();
@@ -45,18 +45,18 @@ namespace CityGuide.Application
             switch (sortOrder)
             {
                 case "name_desc":
-                    return objs.OrderBy(s => s.Name).ToList();
+                    return objs.OrderByDescending(s => s.Name).ToList();
                 case "score":
                     return  objs.OrderBy(s => s.Score).ToList();
                 case "score_desc":
                     return  objs.OrderByDescending(s => s.Score).ToList();
                 default:
-                    return objs;
+                    return objs.OrderBy(s => s.Name).ToList();
             }
         }
 
         [HttpPost]
-        public List<ObjectiveViewModel> GetObjectivesFromSearch(int id, string searchString, string sortOrder = "")
+        public List<ObjectiveViewModel> GetObjectivesFromSearch(int id, string searchString, string sortOrder)
         {
 
             List<Objective> objectives = _db.GetAllObjectives();
@@ -78,8 +78,14 @@ namespace CityGuide.Application
                 case "score_desc":
                     return objs.OrderByDescending(s => s.Score).ToList();
                 default:
-                    return objs;
+                    return objs.OrderBy(s => s.Name).ToList();
             }
+        }
+
+        [HttpPost]
+        public string testFunction(string sortOrder = "")
+        {
+            return sortOrder;
         }
     }
 }

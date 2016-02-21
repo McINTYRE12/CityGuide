@@ -22,23 +22,29 @@ namespace CityGuide.Controllers
             _objWorkerSvc = objService;
         }
 
-        public ActionResult Details(int? id, string searchString)
+        public ActionResult Details(int? id, string searchString, string sortOrder = "")
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Category category = db.Categories.Find(id);
+
             if (category == null)
             {
                 return HttpNotFound();
             }
+
             if (!String.IsNullOrEmpty(searchString))
             {
-                ViewBag.Objectives = _objWorkerSvc.GetObjectivesFromSearch(id.Value, searchString);
+                ViewBag.Objectives = _objWorkerSvc.GetObjectivesFromSearch(id.Value, searchString, sortOrder);
             }
             else
-                ViewBag.Objectives = _objWorkerSvc.GetObjectivesFromCategory(id.Value);
+                ViewBag.Objectives = _objWorkerSvc.GetObjectivesFromCategory(id.Value, sortOrder);
+
+            ViewBag.test = _objWorkerSvc.testFunction();
+
             return View(category);
         }
         

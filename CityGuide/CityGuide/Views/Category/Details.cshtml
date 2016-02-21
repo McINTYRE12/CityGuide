@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     <p>
-        Title: @Html.TextBox("searchString") <br />
+        Title: @Html.TextBox("searchString")
         <input type="submit" value="Filter" />
     </p>
 }
@@ -20,10 +20,10 @@
     <p>
         Sort by:
         <select id="sortOrder" name="sortOrder">
+            <option value="">Name</option>
             <option value="name_desc">Name descending</option>
             <option value="score">Score</option>
             <option value="score_desc">Score descending</option>
-            <option value="">Name</option>
         </select>
         <input type="submit" />
         
@@ -37,5 +37,6 @@
             @Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Objective")
             </div>
     }
+
     <div style="clear:both"></div>
 </div>
