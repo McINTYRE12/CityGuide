@@ -3,48 +3,38 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
-
-<div>
-    <h4>Objective</h4>
+<div style="padding:2%">
+    <h2>@Html.DisplayFor(model => model.Name) <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="float:right;"></span></h2>
+    <input id="input-7-xs" class="rating rating-loading" value="1" data-min="0" data-max="5" data-step="1" data-size="xs"><hr />
+    <div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(http://www.cardia.com/Images/ASDheart.png)">Slide 1</div>
+                <div class="swiper-slide" style="background-image:url(http://www.cardia.com/Images/ASDheart.png)">Slide 2</div>
+                <div class="swiper-slide" style="background-image:url(http://www.cardia.com/Images/ASDheart.png)">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">Slide 10</div>
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <p>Read reviews</p>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Score)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Score)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-
-    </dl>
+    @Html.DisplayFor(model => model.Description)
+    <hr />
+    <script src="../../Content/dist/js/swiper.min.js"></script>
+    <script src="../../Content/dist/js/star-rating.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container');
+        $("#input-id").rating();
+    </script>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

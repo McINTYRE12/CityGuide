@@ -52,22 +52,30 @@ textarea {
 }
 /*star rating*/
 
-.webwidget_rating_simple{
-    padding: 0px;
-    margin: 0px;
-    float: left;
-}
-.webwidget_rating_simple li{
-    line-height: 0px;
-    width: 15px;
-    height: 15px;
-    padding: 0px;
-    margin: 0px;
-    margin-left: 2px;
-    list-style: none;
-    float: left;
-    cursor: pointer;
-}
-.webwidget_rating_simple li span{
-    display: none;
-}
+    .swiper-container {
+        width: 90%;
+        background-color:black;
+    }
+    .swiper-slide {
+        padding-top:50%;
+        text-align: center;
+        font-size: 18px;
+        background: black;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;    
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }

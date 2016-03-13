@@ -142,6 +142,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ObjectiveController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -152,11 +153,22 @@
     <Compile Include="ViewModels\PhotoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\dist\css\swiper.css" />
+    <Content Include="Content\dist\css\swiper.min.css" />
+    <Content Include="Content\dist\js\swiper.jquery.js" />
+    <Content Include="Content\dist\js\swiper.jquery.min.js" />
+    <Content Include="Content\dist\js\swiper.jquery.umd.js" />
+    <Content Include="Content\dist\js\swiper.jquery.umd.min.js" />
+    <Content Include="Content\dist\js\swiper.js" />
+    <Content Include="Content\dist\js\swiper.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\dist\js\maps\swiper.jquery.min.js.map" />
+    <Content Include="Content\dist\js\maps\swiper.jquery.umd.min.js.map" />
+    <Content Include="Content\dist\js\maps\swiper.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -195,6 +207,7 @@
     <Content Include="Views\Objective\Details.cshtml" />
     <Content Include="Views\Objective\Edit.cshtml" />
     <Content Include="Views\Objective\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
