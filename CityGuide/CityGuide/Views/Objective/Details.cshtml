@@ -9,6 +9,10 @@
     <div>
         <div class="swiper-container">
             <div class="swiper-wrapper">
+                @foreach (var i in Model.Photos)
+                {
+                    <div class="swiper-slide" style="background-image:url(@i.Url)">Slide 3</div>
+                }
                 <div class="swiper-slide" style="background-image:url(http://www.cardia.com/Images/ASDheart.png)">Slide 1</div>
                 <div class="swiper-slide" style="background-image:url(http://www.cardia.com/Images/ASDheart.png)">Slide 2</div>
                 <div class="swiper-slide" style="background-image:url(http://www.cardia.com/Images/ASDheart.png)">Slide 3</div>
@@ -32,6 +36,8 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper('.swiper-container');
-        $("#input-id").rating();
+        $(document).ready(function() {
+            $("#input-id").rating()
+        });
     </script>
 </div>
