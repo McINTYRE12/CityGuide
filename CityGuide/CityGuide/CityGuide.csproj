@@ -153,8 +153,12 @@
     <Compile Include="ViewModels\PhotoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\dist\css\star-rating.css" />
+    <Content Include="Content\dist\css\star-rating.min.css" />
     <Content Include="Content\dist\css\swiper.css" />
     <Content Include="Content\dist\css\swiper.min.css" />
+    <Content Include="Content\dist\js\star-rating.js" />
+    <Content Include="Content\dist\js\star-rating.min.js" />
     <Content Include="Content\dist\js\swiper.jquery.js" />
     <Content Include="Content\dist\js\swiper.jquery.min.js" />
     <Content Include="Content\dist\js\swiper.jquery.umd.js" />
