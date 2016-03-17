@@ -10,5 +10,6 @@ namespace CG.Domain
         public int Score { get; set; }
         public int Category { get; set; }
         public virtual List<Photo> Photos { get; set; }
+        public virtual List<Review> Reviews { get; set; }
     }
 }

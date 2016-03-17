@@ -136,6 +136,7 @@
     <Compile Include="Application\CategoryWorkerService.cs" />
     <Compile Include="Application\ObjectivesWorkerService.cs" />
     <Compile Include="Application\PhotosWorkerService.cs" />
+    <Compile Include="Application\ReviewsWorkerService.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="ViewModels\ObjectiveViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PhotoViewModel.cs" />
+    <Compile Include="ViewModels\ReviewViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\dist\css\star-rating.css" />
