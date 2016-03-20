@@ -2,6 +2,7 @@
 using System.Linq;
 using CG.Domain;
 using CityGuide.ViewModels;
+using System.Web.Mvc;
 
 namespace CityGuide.Application
 {
@@ -9,7 +10,6 @@ namespace CityGuide.Application
     {
         private ICityGuideDatabase _db;
 
-        //1. get a referecne to a DB instance
         public ObjectivesWorkerService(ICityGuideDatabase db)
         {
             _db = db;
@@ -18,25 +18,74 @@ namespace CityGuide.Application
         public List<ObjectiveViewModel> GetAllObjectives()
         {
 
-            // 2. cal method on DB "object" to get all objetives
             List<Objective> objectives = _db.GetAllObjectives();
-            List<Photo> photos = _db.GetAllPhotos();
 
-            // 3. map list of objectives to view model class
             return objectives.Select(o => new ObjectiveViewModel
             {
-                Name = o.Name
+                Name = o.Name,
+                Photos = o.Photos,
+                Score = o.Score,
+                Id = o.Id
             }).ToList();
         }
-        public List<ObjectiveViewModel> GetObjectivesFromCategory(int id)
+        [HttpPost]
+        public List<ObjectiveViewModel> GetObjectivesFromCategory(int id, string sortOrder)
         {
 
             List<Objective> objectives = _db.GetAllObjectives();
 
-            return objectives.Where(o => o.Category == id).Select(o => new ObjectiveViewModel
+            var objs = objectives.Where(o => o.Category == id).Select(o => new ObjectiveViewModel
             {
-                Name = o.Name
+                Name = o.Name,
+                Photos = o.Photos,
+                Score = o.Score,
+                Id = o.Id
             }).ToList();
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    return objs.OrderByDescending(s => s.Name).ToList();
+                case "score":
+                    return  objs.OrderBy(s => s.Score).ToList();
+                case "score_desc":
+                    return  objs.OrderByDescending(s => s.Score).ToList();
+                default:
+                    return objs.OrderBy(s => s.Name).ToList();
+            }
+        }
+
+        [HttpPost]
+        public List<ObjectiveViewModel> GetObjectivesFromSearch(int id, string searchString, string sortOrder)
+        {
+
+            List<Objective> objectives = _db.GetAllObjectives();
+
+            var objs =  objectives.Where(o => o.Name.Contains(searchString) && o.Category == id).Select(o => new ObjectiveViewModel
+            {
+                Name = o.Name,
+                Photos = o.Photos,
+                Score = o.Score,
+                Id = o.Id
+            }).ToList();
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    return objs.OrderByDescending(s => s.Name).ToList();
+                case "score":
+                    return objs.OrderBy(s => s.Score).ToList();
+                case "score_desc":
+                    return objs.OrderByDescending(s => s.Score).ToList();
+                default:
+                    return objs.OrderBy(s => s.Name).ToList();
+            }
+        }
+
+        [HttpPost]
+        public string testFunction(string sortOrder = "")
+        {
+            return sortOrder;
         }
     }
 }

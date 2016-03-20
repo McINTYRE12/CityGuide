@@ -74,6 +74,26 @@
     <Compile Include="Migrations\201602041207288_AddedPhotosTable.Designer.cs">
       <DependentUpon>201602041207288_AddedPhotosTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602091025595_databaseFix.cs" />
+    <Compile Include="Migrations\201602091025595_databaseFix.Designer.cs">
+      <DependentUpon>201602091025595_databaseFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602091418372_DeletedObjIdFromPhotoTable.cs" />
+    <Compile Include="Migrations\201602091418372_DeletedObjIdFromPhotoTable.Designer.cs">
+      <DependentUpon>201602091418372_DeletedObjIdFromPhotoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603170945567_CreatedReviewsDbSet.cs" />
+    <Compile Include="Migrations\201603170945567_CreatedReviewsDbSet.Designer.cs">
+      <DependentUpon>201603170945567_CreatedReviewsDbSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603170955584_CorrectedSpellingError.cs" />
+    <Compile Include="Migrations\201603170955584_CorrectedSpellingError.Designer.cs">
+      <DependentUpon>201603170955584_CorrectedSpellingError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603170957589_AddedLazyLoadingForReviews.cs" />
+    <Compile Include="Migrations\201603170957589_AddedLazyLoadingForReviews.Designer.cs">
+      <DependentUpon>201603170957589_AddedLazyLoadingForReviews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +122,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602041207288_AddedPhotosTable.resx">
       <DependentUpon>201602041207288_AddedPhotosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602091025595_databaseFix.resx">
+      <DependentUpon>201602091025595_databaseFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602091418372_DeletedObjIdFromPhotoTable.resx">
+      <DependentUpon>201602091418372_DeletedObjIdFromPhotoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603170945567_CreatedReviewsDbSet.resx">
+      <DependentUpon>201603170945567_CreatedReviewsDbSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603170955584_CorrectedSpellingError.resx">
+      <DependentUpon>201603170955584_CorrectedSpellingError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603170957589_AddedLazyLoadingForReviews.resx">
+      <DependentUpon>201603170957589_AddedLazyLoadingForReviews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

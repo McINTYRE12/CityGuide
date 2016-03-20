@@ -14,14 +14,14 @@ namespace CityGuide.Application
             _db = db;
         }
 
-        public List<PhotoViewModel> GetAllCategories()
+        public List<PhotoViewModel> GetAllPhotos()
         {
 
             List<Photo> photos = _db.GetAllPhotos();
 
             return photos.Select(o => new PhotoViewModel
             {
-                url = o.url,
+                Url = o.Url,
                 Id = o.Id
             }).ToList();
         }

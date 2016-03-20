@@ -1,0 +1,33 @@
+﻿@model CG.Domain.Objective
+
+@{
+    ViewBag.Title = "Details";
+}
+<div style="padding:2%">
+    <h2>@Html.DisplayFor(model => model.Name) <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="float:right;"></span></h2>
+    <input id="input-7-xs" class="rating rating-loading" value="1" data-min="0" data-max="5" data-step="1" data-size="xs"><hr />
+    <div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                @foreach (var i in Model.Photos)
+                {
+                    <div class="swiper-slide" style="background-image:url(@i.Url)"></div>
+                }
+            </div>
+        </div>
+    </div>
+    <hr />
+    <p>Read reviews</p>
+    <hr />
+    @Html.DisplayFor(model => model.Description)
+    <hr />
+    <script src="../../Content/dist/js/swiper.min.js" type="text/javascript"></script>
+    <script src="../../Content/dist/js/star-rating.js" type="text/javascript"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container');
+        $(document).ready(function() {
+            $("#input-id").rating()
+        });
+    </script>
+</div>

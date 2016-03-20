@@ -2,6 +2,8 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 using CityGuide.App_Start;
+using System.Data.Entity;
+using CG.DataAccess;
 
 namespace CityGuide
 {
@@ -14,6 +16,7 @@ namespace CityGuide
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer<CityGuideContext>(null);
         }
     }
 }
