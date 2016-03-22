@@ -9,5 +9,6 @@ namespace CityGuide.ViewModels
     {
         public string Name { get; set; }
         public int Id { get; set; }
+        public string IconUrl { get; set; }
     }
 }

@@ -25,7 +25,8 @@ namespace CityGuide.Application
                 Name = o.Name,
                 Photos = o.Photos,
                 Score = o.Score,
-                Id = o.Id
+                Id = o.Id,
+                Reviews = o.Reviews
             }).ToList();
         }
         [HttpPost]
@@ -39,7 +40,8 @@ namespace CityGuide.Application
                 Name = o.Name,
                 Photos = o.Photos,
                 Score = o.Score,
-                Id = o.Id
+                Id = o.Id,
+                Reviews = o.Reviews
             }).ToList();
 
             switch (sortOrder)
@@ -66,7 +68,8 @@ namespace CityGuide.Application
                 Name = o.Name,
                 Photos = o.Photos,
                 Score = o.Score,
-                Id = o.Id
+                Id = o.Id,
+                Reviews = o.Reviews
             }).ToList();
 
             switch (sortOrder)

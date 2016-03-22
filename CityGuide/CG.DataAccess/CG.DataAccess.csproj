@@ -94,6 +94,10 @@
     <Compile Include="Migrations\201603170957589_AddedLazyLoadingForReviews.Designer.cs">
       <DependentUpon>201603170957589_AddedLazyLoadingForReviews.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603220724204_AddedCategoryIconUrl.cs" />
+    <Compile Include="Migrations\201603220724204_AddedCategoryIconUrl.Designer.cs">
+      <DependentUpon>201603220724204_AddedCategoryIconUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603170957589_AddedLazyLoadingForReviews.resx">
       <DependentUpon>201603170957589_AddedLazyLoadingForReviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603220724204_AddedCategoryIconUrl.resx">
+      <DependentUpon>201603220724204_AddedCategoryIconUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

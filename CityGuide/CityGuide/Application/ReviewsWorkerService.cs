@@ -14,7 +14,7 @@ namespace CityGuide.Application
             _db = db;
         }
 
-        /*public List<ReviewViewModel> GetAllReviews()
+        public List<ReviewViewModel> GetReviewsForObjective(int ObjId)
         {
 
             List<Review> reviews = _db.GetAllReviews();
@@ -24,10 +24,8 @@ namespace CityGuide.Application
                 IdUser = r.IdUser,
                 Id = r.Id,
                 ReviewScore = r.ReviewScore,
-                ScoreGiven = r.ScoreGiven,
-
-
+                ScoreGiven = r.ScoreGiven
             }).ToList();
-        }*/
+        }
     }
 }

@@ -32,7 +32,7 @@ textarea {
 }
 
 .category-square{
-   width: 50%;
+    width: 50%;
     float: left;
     height: 0;
     border-style: solid;
@@ -40,6 +40,10 @@ textarea {
     text-align: center;
     padding-bottom: 25%;
     padding-top:15%;
+}
+
+.big{
+    width: 100% !important;
 }
 
 .objective-square{

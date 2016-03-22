@@ -50,5 +50,12 @@ namespace CG.DataAccess
 
             return photos.ToList();
         }
+        public List<Review> GetAllReviews()
+        {
+
+            IQueryable<Review> reviews = _ctx.Reviews;
+
+            return reviews.ToList();
+        }
     }
 }

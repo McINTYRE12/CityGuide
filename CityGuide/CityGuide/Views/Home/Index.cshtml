@@ -1,12 +1,21 @@
 ﻿@model List<CityGuide.ViewModels.CategoryViewModel>
 @{
     ViewBag.Title = "Home Page";
+    int i = 0;
 }
 
 <div class="main">
     @foreach (var cat in Model)
     {
-        <div class="category-square">@Html.ActionLink(@cat.Name, "Details/" + @cat.Id, "Category")</div>
+        i++;
+        if (i != 5)
+        {
+            <div class="category-square">@Html.ActionLink(@cat.Name, "Details/" + @cat.Id, "Category")</div>
+        }
+        else
+        {
+            <div class="category-square big">@Html.ActionLink(@cat.Name, "Details/" + @cat.Id, "Category")</div>
+        }
     }
     <div style="clear: both"></div>
 </div>
