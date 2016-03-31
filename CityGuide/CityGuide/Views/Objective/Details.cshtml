@@ -3,9 +3,30 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="height:40px;">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="float:right !important;"><span class="glyphicon glyphicon-user white"></span></button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div style="padding:2%">
-    <h2>@Html.DisplayFor(model => model.Name) <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="float:right;"></span></h2>
-    <input id="input-7-xs" class="rating rating-loading" value="1" data-min="0" data-max="5" data-step="1" data-size="xs"><hr />
+    <h2 style="font-family:AlegryaSansRegular; font-weight: bold; color:#444877;">@Html.DisplayFor(model => model.Name)</h2>
+    <input id="input-7-xs" class="rating rating-loading" value="@Html.DisplayFor(model => model.Score)" data-min="0" data-max="5" data-step="1" data-size="xs"><hr />
     <div>
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -16,18 +37,108 @@
             </div>
         </div>
     </div>
-    <hr />
-    <p>Read reviews</p>
-    <hr />
-    @Html.DisplayFor(model => model.Description)
-    <hr />
+
+    <div id="tab-container" class="tab-container">
+        <ul class='etabs'>
+            <li class='tab'><a href="#tabs1-desc">DESCRIPTION</a></li>
+            <li class='tab'><a href="#tabs1-map">MAP</a></li>
+            <li class='tab'><a href="#tabs1-rev">REVIEWS</a></li>
+        </ul>
+        <div id="tabs1-desc">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+        <div id="tabs1-map">
+            <div id="map"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgB6k3M1uQPR8KH2GCrckVIXb9veb3QoQ&callback=initMap"
+                    async defer></script>
+        </div>
+        <div id="tabs1-rev">
+            <div class="read-reviews">
+                <hr />
+                <p id="add-review-text"><a>Add your review</a></p>
+                <hr />
+                <div class="review-container">
+                    <div class="review-title">
+                        <p>Amazing history</p>
+                        <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; margin-top:-10px;" />
+                    </div>
+                    <div class="review-profile">
+
+                        <img src="http://mhalabs.org/wp-content/uploads/upme/1451456913_brodie.jpg" class="img-circle" />
+                        <p style="font-weight:bold; font-family:AlegryaSansRegular;">Brodie Johns</p>
+                        <br />
+                        <p>June 30th, Cluj-Napoca, Romania</p>
+                    </div>
+                    <div class="review-text">
+                        <p>There is so much history here for children and teens and even better that its free to enter. There is so much see and do here. The cafe was expensive so I would take along your own lunch as it can be a full day out. </p>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="review-container">
+                <div class="review-title">
+                    <p>Amazing history</p>
+                    <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; margin-top:-10px;" />
+                </div>
+                <div class="review-profile">
+
+                    <img src="https://pbs.twimg.com/profile_images/378800000209583472/e2fb451cfa15d16b51e6ce51028b6806.jpeg" class="img-circle" />
+                    <p style="font-weight:bold; font-family:AlegryaSansRegular;">Stan Andrew</p>
+                    <br />
+                    <p>July 12th, Cluj-Napoca, Romania</p>
+                </div>
+                <div class="review-text">
+                    <p>There is so much history here for children and teens and even better that its free to enter. There is so much see and do here. The cafe was expensive so I would take along your own lunch as it can be a full day out. </p>
+                </div>
+            </div>
+            <hr />
+            <div class="review-container">
+                <div class="review-title">
+                    <p>Amazing history</p>
+                    <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; margin-top:-10px;" />
+                </div>
+                <div class="review-profile">
+
+                    <img src="https://justinjackson.ca/wp-content/uploads/2008/08/justin-jackson-profile-smile-selfie.jpg" class="img-circle" />
+                    <p style="font-weight:bold; font-family:AlegryaSansRegular;">Justin Jackson</p>
+                    <br />
+                    <p>May 13th, Cluj-Napoca, Romania</p>
+                </div>
+                <div class="review-text">
+                    <p>There is so much history here for children and teens and even better that its free to enter. There is so much see and do here. The cafe was expensive so I would take along your own lunch as it can be a full day out. </p>
+                </div>
+            </div>
+            <hr />
+            <div class="review-container">
+                <div class="review-title">
+                    <p>Amazing history</p>
+                    <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; margin-top:-10px;" />
+                </div>
+                <div class="review-profile">
+
+                    <img src="https://pbs.twimg.com/profile_images/499350452991844352/Gl3g7QTK_400x400.png" class="img-circle" />
+                    <p style="font-weight:bold; font-family:AlegryaSansRegular;">Steve Carrie</p>
+                    <br />
+                    <p>March 1st, Cluj-Napoca, Romania</p>
+                </div>
+                <div class="review-text">
+                    <p>There is so much history here for children and teens and even better that its free to enter. There is so much see and do here. The cafe was expensive so I would take along your own lunch as it can be a full day out. </p>
+                </div>
+            </div>
+        </div>
+        <hr />
+        </div>
+    </div>
     <script src="../../Content/dist/js/swiper.min.js" type="text/javascript"></script>
     <script src="../../Content/dist/js/star-rating.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.easytabs.js" type="text/javascript"></script>
+    <script src="../../Scripts/Site.js" type="text/javascript"></script>
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper('.swiper-container');
         $(document).ready(function() {
-            $("#input-id").rating()
+            $("#input-id").rating({ displayOnly: true });
+            $('#tab-container').easytabs();
         });
     </script>
 </div>

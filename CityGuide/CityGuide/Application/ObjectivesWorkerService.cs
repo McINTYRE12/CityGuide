@@ -26,22 +26,24 @@ namespace CityGuide.Application
                 Photos = o.Photos,
                 Score = o.Score,
                 Id = o.Id,
-                Reviews = o.Reviews
+                Reviews = o.Reviews,
+                Address = o.Address
             }).ToList();
         }
         [HttpPost]
         public List<ObjectiveViewModel> GetObjectivesFromCategory(int id, string sortOrder)
         {
 
-            List<Objective> objectives = _db.GetAllObjectives();
+            List<Objective> objectives = _db.GetObjectivesFromCategory(id);
 
-            var objs = objectives.Where(o => o.Category == id).Select(o => new ObjectiveViewModel
+            var objs = objectives.Select(o => new ObjectiveViewModel
             {
                 Name = o.Name,
                 Photos = o.Photos,
                 Score = o.Score,
                 Id = o.Id,
-                Reviews = o.Reviews
+                Reviews = o.Reviews,
+                Address = o.Address
             }).ToList();
 
             switch (sortOrder)
@@ -69,7 +71,8 @@ namespace CityGuide.Application
                 Photos = o.Photos,
                 Score = o.Score,
                 Id = o.Id,
-                Reviews = o.Reviews
+                Reviews = o.Reviews,
+                Address = o.Address
             }).ToList();
 
             switch (sortOrder)

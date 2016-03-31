@@ -36,19 +36,7 @@ namespace CG.DataAccess
 
             IQueryable<Objective> objs = _ctx.Objectives;
 
-            return objs.ToList();
-        }
-        public List<Photo> GetAllPhotos()
-        {
-            IQueryable<Photo> photos = _ctx.Photos;
-
-            return photos.ToList();
-        }
-        public List<Photo> GetPhotosOfObjective(int id)
-        {
-            IQueryable<Photo> photos = _ctx.Photos;
-
-            return photos.ToList();
+            return objs.Where(o => o.Category == id).ToList();
         }
         public List<Review> GetAllReviews()
         {

@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
+    min-width: 330px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -28,18 +28,30 @@ textarea {
 /* new css */
 .main{
     width:100%;
-    margin-top: 10px;
 }
 
 .category-square{
     width: 50%;
     float: left;
     height: 0;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
     text-align: center;
     padding-bottom: 25%;
     padding-top:15%;
+    font-family: AlegryaSans;
+    font-size: 12pt;
+}
+
+.category-square img{
+    margin-bottom: 10px;
+}
+
+.category-square a{
+    text-decoration: none;
+    color: black;
+}
+
+.category-square:hover a{
+    color: white;
 }
 
 .big{
@@ -47,14 +59,12 @@ textarea {
 }
 
 .objective-square{
-    width: 50%;
+    width: 100%;
     float: left;
-    height: 0;
+    display: flex;
     border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    padding-top:20%;
-    padding-bottom:20px;
-    padding-left:5px;
+    border-width: 0px 0px 1px 0px;
+    border-color: #BFC2D3;
 }
 /*star rating*/
 
@@ -88,4 +98,268 @@ textarea {
 
 .white, .white a {
   color: #fff;
+}
+
+.home-navbar {
+    background: url(http://www.rentalmotorbike.com/images/cities/Cluj-Napoca.jpg) center bottom;
+    height: 150px;
+    background-size: cover;
+}
+
+.categoru-icon {
+    
+}
+
+.sightseeing{
+    border-width: 0px 1px 0px 0px;
+    border-style:solid;
+    border-color:#BFC0D4;
+}
+
+.hotel{
+    border-width: 1px 1px 0px 0px;
+    border-style:solid;
+    border-color:#BFC0D4;
+}
+
+.tours{
+    border-width: 1px 0px 0px 0px;
+    border-style:solid;
+    border-color:#BFC0D4;
+}
+
+.nightlife{
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color:#BFC0D4;
+}
+
+.sightseeing:hover img{
+    
+    content: url("../Content/images/obiectiv-white.png");
+}
+
+.sightseeing:hover {
+    background-color: #21BA8B;
+}
+
+.food:hover img{
+    
+    content: url("../Content/images/food-white.png");
+}
+
+.food:hover {
+    background-color: #FB7540;
+}
+
+.hotel:hover img{
+    
+    content: url("../Content/images/hotel-white.png");
+}
+
+.hotel:hover {
+    background-color: #F03D67;
+}
+
+.nightlife:hover img{
+    
+    content: url("../Content/images/nightlife-white.png");
+}
+
+.nightlife:hover {
+    background-color: #384496;
+}
+
+.tours:hover img{
+    
+    content: url("../Content/images/tour-white.png");
+}
+
+.tours:hover {
+    background-color: #EEBF31;
+}
+
+.sort-form{
+    float:right;
+}
+
+.objectives-container{
+    margin-top: 10px;
+}
+
+.bootstrap-select{
+    margin-top: 5px;
+    margin-right:5px;
+}
+
+.category-header{
+    background-color:#E5E7F3;
+    padding-bottom: 5px;
+    margin-bottom: -10px;
+    font-family: AlegrySans;
+    border-bottom: solid 1px;
+}
+
+.category-header span{
+    font-family: AlegryaSans;
+    color: #323956;
+}
+
+.objective-square img{
+    width: 40%;
+    height: 40%;
+}
+
+.objectives-container p, h4{
+    margin: 0px 0px 5px 0px;
+    text-decoration-color: black;
+}
+
+@font-face{
+    font-family: AlegryaSans;
+    src: url(../Content/fonts/AlegreyaSans-Regular.otf);
+}
+
+@font-face{
+    font-family: AlegryaSansRegular;
+    src:url(../Content/fonts/AlegreyaSans-Light.otf);
+}
+
+.objective-listing-photo{
+    margin: 15px 0px 15px 10px;
+    width: 90px;
+    height: 90px;
+}
+
+.objective-listing-details{
+    float:left; 
+    padding-top: 15px; 
+    margin-left: 5px;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: transparent;
+}
+
+/*tabs*/
+
+.etabs {
+    margin: 0;
+    padding: 0;
+}
+
+.tab {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    font-family: AlegryaSans;
+}
+
+.tab a {
+    font-size: 14px;
+    line-height: 2em;
+    display: block;
+    padding: 0 10px;
+    outline: none;
+}
+
+.tab a:hover {
+    text-decoration: underline;
+}
+
+.tab.active {
+    padding-top: 6px;
+    position: relative;
+    top: 1px;
+}
+
+.tab a.active {
+    font-weight: bold;
+    color:#E08E78;
+    text-decoration: none;
+}
+
+.tab-container .panel-container {
+    padding: 10px;
+}
+
+.panel-container {
+    margin-bottom: 10px;
+}
+
+.read-reviews hr{
+    margin: 5px 0px 5px 0px;
+}
+
+#add-review-text{
+    margin:0;
+    text-align: center;
+    font-weight: bold;
+    font-family:AlegryaSansRegular;
+}
+
+#add-review-text p{
+    color: #E3DDE7 !important;
+}
+
+#tabs1-desc{
+    text-indent: 40px !important;
+}
+
+.login-background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url(../../Content/images/login-background.png);
+    align-content: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.login-text {
+    font-family: AlegryaSans;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18pt;
+    color: #E3DDE7;
+}
+
+#text-back {
+    font-family: AlegryaSansRegular;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20pt;
+    color: #E3DDE7;
+}
+
+#text-back img{
+    margin-top: -4px;
+}
+
+.review-container{
+    font-family: AlegryaSans;
+}
+
+.review-profile img{
+    width:40px;
+    float:left;
+}
+
+.review-profile p{
+    display:initial;
+    color: #444877;
+}
+
+.review-text{
+    margin-top:5px;
+}
+
+.review-title p {
+    font-family: AlegryaSansRegular;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #444877;
+    margin-bottom:0px;
 }

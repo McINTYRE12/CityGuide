@@ -3,40 +3,65 @@
 @{
     ViewBag.Title = Html.DisplayFor(model => model.Name);
 }
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="height:40px;">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="float:right !important;"><span class="glyphicon glyphicon-user white"></span></button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="category-header">
+    <img src="@Html.DisplayFor(model => model.IconUrl)" style="margin-left: 5px; margin-top: 8px;" /><span>@Html.DisplayFor(model => model.Name)</span>
 
-<h3>@Html.DisplayFor(model => model.Name)</h3>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
-<hr />
-@using (Html.BeginForm())
-{
-    <p>
-        Title: @Html.TextBox("searchString")
-        <input type="submit" value="Filter" />
-    </p>
-}
 
-@using (Html.BeginForm())
-{
-    <p>
-        Sort by:
-        <select id="sortOrder" name="sortOrder">
+    @using (Html.BeginForm("Details", "Category", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "sort-form" }))
+    {
+        <select id="sortOrder" class="selectpicker" name="sortOrder" style="margin-top: 10px" data-width="120px" onchange="this.form.submit();" multiple title="Sort by">
             <option value="">Name</option>
-            <option value="name_desc">Name descending</option>
+            <option value="name_desc">Name desc.</option>
             <option value="score">Score</option>
-            <option value="score_desc">Score descending</option>
+            <option value="score_desc">Score desc.</option>
         </select>
-        <input type="submit" />
-        
-    </p>
-}
- 
-<div>
+    }
+</div>
+<div class="objectives-container">
     @foreach (var o in ViewBag.Objectives)
     {
-        <div class="objective-square" style="background: url(@o.Photos[0].Url)  no-repeat center center; background-size:cover">
-            @Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Objective")
+        <div class="objective-square">
+            <div style="background:url(@o.Photos[0].Url) 50% 50% no-repeat; background-size: cover;" class="objective-listing-photo"></div>
+            <div class="objective-listing-details">
+                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Objective")</h4>
+                <p style="font-family:AlegryaSans;">@o.Address</p>
+                <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; width: auto; margin-top:-10px;"/>
+                <p style="font-family:AlegryaSans">"It's been great" <a href="#"> 32 Reviews</a></p>
             </div>
+        </div>
     }
 
     <div style="clear:both"></div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $("option").click(function () {
+            $(".sort-form").submit();
+        })
+    });
+</script>

@@ -98,6 +98,30 @@
     <Compile Include="Migrations\201603220724204_AddedCategoryIconUrl.Designer.cs">
       <DependentUpon>201603220724204_AddedCategoryIconUrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603290640026_AddedAddressToObjectives.cs" />
+    <Compile Include="Migrations\201603290640026_AddedAddressToObjectives.Designer.cs">
+      <DependentUpon>201603290640026_AddedAddressToObjectives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603301544179_AddedReviewTitle.cs" />
+    <Compile Include="Migrations\201603301544179_AddedReviewTitle.Designer.cs">
+      <DependentUpon>201603301544179_AddedReviewTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603310534591_AddedUsersTable.cs" />
+    <Compile Include="Migrations\201603310534591_AddedUsersTable.Designer.cs">
+      <DependentUpon>201603310534591_AddedUsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603310536041_AddedUsersTableFixed.cs" />
+    <Compile Include="Migrations\201603310536041_AddedUsersTableFixed.Designer.cs">
+      <DependentUpon>201603310536041_AddedUsersTableFixed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603310537022_LazyLoadingForReviewUser.cs" />
+    <Compile Include="Migrations\201603310537022_LazyLoadingForReviewUser.Designer.cs">
+      <DependentUpon>201603310537022_LazyLoadingForReviewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603310541227_RemovedUsersLazyLoading.cs" />
+    <Compile Include="Migrations\201603310541227_RemovedUsersLazyLoading.Designer.cs">
+      <DependentUpon>201603310541227_RemovedUsersLazyLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -144,6 +168,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603220724204_AddedCategoryIconUrl.resx">
       <DependentUpon>201603220724204_AddedCategoryIconUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603290640026_AddedAddressToObjectives.resx">
+      <DependentUpon>201603290640026_AddedAddressToObjectives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603301544179_AddedReviewTitle.resx">
+      <DependentUpon>201603301544179_AddedReviewTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603310534591_AddedUsersTable.resx">
+      <DependentUpon>201603310534591_AddedUsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603310536041_AddedUsersTableFixed.resx">
+      <DependentUpon>201603310536041_AddedUsersTableFixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603310537022_LazyLoadingForReviewUser.resx">
+      <DependentUpon>201603310537022_LazyLoadingForReviewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603310541227_RemovedUsersLazyLoading.resx">
+      <DependentUpon>201603310541227_RemovedUsersLazyLoading.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
