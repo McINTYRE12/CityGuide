@@ -15,8 +15,9 @@
 .dl-horizontal dt {
     white-space: normal;
 }
-.navbar-toggle{
-    float:left !important;
+
+.navbar-toggle {
+    float: left !important;
 }
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -26,39 +27,39 @@ textarea {
 }
 
 /* new css */
-.main{
-    width:100%;
+.main {
+    width: 100%;
 }
 
-.category-square{
+.category-square {
     width: 50%;
     float: left;
     height: 0;
     text-align: center;
     padding-bottom: 25%;
-    padding-top:15%;
+    padding-top: 15%;
     font-family: AlegryaSans;
     font-size: 12pt;
 }
 
-.category-square img{
-    margin-bottom: 10px;
-}
+    .category-square img {
+        margin-bottom: 10px;
+    }
 
-.category-square a{
-    text-decoration: none;
-    color: black;
-}
+    .category-square a {
+        text-decoration: none;
+        color: black;
+    }
 
-.category-square:hover a{
-    color: white;
-}
+    .category-square:hover a {
+        color: white;
+    }
 
-.big{
+.big {
     width: 100% !important;
 }
 
-.objective-square{
+.objective-square {
     width: 100%;
     float: left;
     display: flex;
@@ -68,36 +69,36 @@ textarea {
 }
 /*star rating*/
 
-    .swiper-container {
-        width: 90%;
-        background-color:black;
-    }
-    .swiper-slide {
-        padding-top:50%;
-        text-align: center;
-        font-size: 18px;
-        background: black;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;    
-        
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
+.swiper-container {
+    width: 90%;
+    background-color: black;
+}
+
+.swiper-slide {
+    padding-top: 50%;
+    text-align: center;
+    font-size: 18px;
+    background: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
 
 .white, .white a {
-  color: #fff;
+    color: #fff;
 }
 
 .home-navbar {
@@ -107,35 +108,33 @@ textarea {
 }
 
 .categoru-icon {
-    
 }
 
-.sightseeing{
+.sightseeing {
     border-width: 0px 1px 0px 0px;
-    border-style:solid;
-    border-color:#BFC0D4;
+    border-style: solid;
+    border-color: #BFC0D4;
 }
 
-.hotel{
+.hotel {
     border-width: 1px 1px 0px 0px;
-    border-style:solid;
-    border-color:#BFC0D4;
+    border-style: solid;
+    border-color: #BFC0D4;
 }
 
-.tours{
-    border-width: 1px 0px 0px 0px;
-    border-style:solid;
-    border-color:#BFC0D4;
-}
-
-.nightlife{
+.tours {
     border-width: 1px 0px 0px 0px;
     border-style: solid;
-    border-color:#BFC0D4;
+    border-color: #BFC0D4;
 }
 
-.sightseeing:hover img{
-    
+.nightlife {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #BFC0D4;
+}
+
+.sightseeing:hover img {
     content: url("../Content/images/obiectiv-white.png");
 }
 
@@ -143,8 +142,7 @@ textarea {
     background-color: #21BA8B;
 }
 
-.food:hover img{
-    
+.food:hover img {
     content: url("../Content/images/food-white.png");
 }
 
@@ -152,8 +150,7 @@ textarea {
     background-color: #FB7540;
 }
 
-.hotel:hover img{
-    
+.hotel:hover img {
     content: url("../Content/images/hotel-white.png");
 }
 
@@ -161,8 +158,7 @@ textarea {
     background-color: #F03D67;
 }
 
-.nightlife:hover img{
-    
+.nightlife:hover img {
     content: url("../Content/images/nightlife-white.png");
 }
 
@@ -170,8 +166,7 @@ textarea {
     background-color: #384496;
 }
 
-.tours:hover img{
-    
+.tours:hover img {
     content: url("../Content/images/tour-white.png");
 }
 
@@ -179,61 +174,61 @@ textarea {
     background-color: #EEBF31;
 }
 
-.sort-form{
-    float:right;
+.sort-form {
+    float: right;
 }
 
-.objectives-container{
+.objectives-container {
     margin-top: 10px;
 }
 
-.bootstrap-select{
+.bootstrap-select {
     margin-top: 5px;
-    margin-right:5px;
+    margin-right: 5px;
 }
 
-.category-header{
-    background-color:#E5E7F3;
+.category-header {
+    background-color: #E5E7F3;
     padding-bottom: 5px;
     margin-bottom: -10px;
     font-family: AlegrySans;
     border-bottom: solid 1px;
 }
 
-.category-header span{
-    font-family: AlegryaSans;
-    color: #323956;
-}
+    .category-header span {
+        font-family: AlegryaSans;
+        color: #323956;
+    }
 
-.objective-square img{
+.objective-square img {
     width: 40%;
     height: 40%;
 }
 
-.objectives-container p, h4{
+.objectives-container p, h4 {
     margin: 0px 0px 5px 0px;
     text-decoration-color: black;
 }
 
-@font-face{
+@font-face {
     font-family: AlegryaSans;
     src: url(../Content/fonts/AlegreyaSans-Regular.otf);
 }
 
-@font-face{
+@font-face {
     font-family: AlegryaSansRegular;
-    src:url(../Content/fonts/AlegreyaSans-Light.otf);
+    src: url(../Content/fonts/AlegreyaSans-Light.otf);
 }
 
-.objective-listing-photo{
+.objective-listing-photo {
     margin: 15px 0px 15px 10px;
     width: 90px;
     height: 90px;
 }
 
-.objective-listing-details{
-    float:left; 
-    padding-top: 15px; 
+.objective-listing-details {
+    float: left;
+    padding-top: 15px;
     margin-left: 5px;
 }
 
@@ -255,29 +250,29 @@ textarea {
     font-family: AlegryaSans;
 }
 
-.tab a {
-    font-size: 14px;
-    line-height: 2em;
-    display: block;
-    padding: 0 10px;
-    outline: none;
-}
+    .tab a {
+        font-size: 14px;
+        line-height: 2em;
+        display: block;
+        padding: 0 10px;
+        outline: none;
+    }
 
-.tab a:hover {
-    text-decoration: underline;
-}
+        .tab a:hover {
+            text-decoration: underline;
+        }
 
-.tab.active {
-    padding-top: 6px;
-    position: relative;
-    top: 1px;
-}
+    .tab.active {
+        padding-top: 6px;
+        position: relative;
+        top: 1px;
+    }
 
-.tab a.active {
-    font-weight: bold;
-    color:#E08E78;
-    text-decoration: none;
-}
+    .tab a.active {
+        font-weight: bold;
+        color: #E08E78;
+        text-decoration: none;
+    }
 
 .tab-container .panel-container {
     padding: 10px;
@@ -287,22 +282,22 @@ textarea {
     margin-bottom: 10px;
 }
 
-.read-reviews hr{
+.read-reviews hr {
     margin: 5px 0px 5px 0px;
 }
 
-#add-review-text{
-    margin:0;
+#add-review-text {
+    margin: 0;
     text-align: center;
     font-weight: bold;
-    font-family:AlegryaSansRegular;
+    font-family: AlegryaSansRegular;
 }
 
-#add-review-text p{
-    color: #E3DDE7 !important;
-}
+    #add-review-text p {
+        color: #E3DDE7 !important;
+    }
 
-#tabs1-desc{
+#tabs1-desc {
     text-indent: 40px !important;
 }
 
@@ -334,26 +329,26 @@ textarea {
     color: #E3DDE7;
 }
 
-#text-back img{
-    margin-top: -4px;
-}
+    #text-back img {
+        margin-top: -4px;
+    }
 
-.review-container{
+.review-container {
     font-family: AlegryaSans;
 }
 
-.review-profile img{
-    width:40px;
-    float:left;
+.review-profile img {
+    width: 40px;
+    float: left;
 }
 
-.review-profile p{
-    display:initial;
+.review-profile p {
+    display: initial;
     color: #444877;
 }
 
-.review-text{
-    margin-top:5px;
+.review-text {
+    margin-top: 5px;
 }
 
 .review-title p {
@@ -361,5 +356,9 @@ textarea {
     font-weight: bold;
     font-size: 12pt;
     color: #444877;
-    margin-bottom:0px;
+    margin-bottom: 0px;
+}
+
+.navbar-nav {
+    text-align: center;
 }
