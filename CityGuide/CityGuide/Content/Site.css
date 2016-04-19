@@ -362,3 +362,11 @@ textarea {
 .navbar-nav {
     text-align: center;
 }
+
+.facebook-login-btn{
+     background: url(.././Content/images/login-button.png) no-repeat top left;
+     display: block;
+     width: 100px;
+     height: 100px;
+     text-indent: -9999px; /* hides the link text */
+}

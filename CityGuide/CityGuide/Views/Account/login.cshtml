@@ -1,15 +1,14 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "Login";
 }
 <div class="login-background">
     <br />
-    <img src="~/Content/images/logo.png" style="display: block; margin-left: auto; margin-right: auto;"/>
+    <img src="~/Content/images/logo.png" style="display: block; margin-left: auto; margin-right: auto;" />
     <br />
     <p class="login-text">Sign in</p>
     <p class="login-text">with Facebook</p>
     <br />
-    <a href="#"><img src="~/Content/images/login-button.png" class="center-block" /></a>
+    @Html.ActionLink("Login with Facebook.", "Facebook", "Account", new { @class = "facebook-login-btn center-block"})
     <br />
     <a id="text-back" href="@Url.Action("Index","Home")"><img src="~/Content/images/arrow.png" /> Back</a>
 </div>
