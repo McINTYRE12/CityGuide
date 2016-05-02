@@ -45,5 +45,14 @@ namespace CG.DataAccess
 
             return reviews.ToList();
         }
+        public void AddUserToDB(User UserToAdd)
+        {
+            if(!_ctx.Users.Any(o => o.FacebookID == UserToAdd.FacebookID))
+            {
+                _ctx.Users.Add(UserToAdd);
+            }
+
+            Commit();
+        }
     }
 }

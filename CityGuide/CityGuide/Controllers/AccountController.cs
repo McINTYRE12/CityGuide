@@ -1,7 +1,9 @@
-﻿using Facebook;
+﻿using CG.Domain;
+using Facebook;
 using System;
 using System.Web.Mvc;
 using System.Web.Security;
+using CG.DataAccess;
 
 namespace FacebookAuth.Controllers
 {
@@ -49,7 +51,11 @@ namespace FacebookAuth.Controllers
 
         public ActionResult FacebookCallback(string code)
         {
+            var CurrentUser = new User();
             var fb = new FacebookClient();
+            var ctx = new CityGuideContext();
+            var db = new CityGuideDatabase(ctx);
+
             dynamic result = fb.Post("oauth/access_token", new
             {
                 client_id = "1018612288230748",
@@ -69,13 +75,15 @@ namespace FacebookAuth.Controllers
 
             // Get the user's information
             dynamic me = fb.Get("me?fields=first_name,middle_name,last_name,id,email");
-            string email = me.email;
-            string firstname = me.first_name;
-            string middlename = me.middle_name;
-            string lastname = me.last_name;
+            CurrentUser.Email = me.email;
+            CurrentUser.FirstName = me.first_name;
+            CurrentUser.MiddleName = me.middle_name;
+            CurrentUser.LastName = me.last_name;
+            CurrentUser.FacebookID = me.id;
 
+            db.AddUserToDB(CurrentUser);
             // Set the auth cookie
-            FormsAuthentication.SetAuthCookie(email, false);
+            FormsAuthentication.SetAuthCookie(CurrentUser.Email, false);
             return RedirectToAction("Index", "Home");
         }
     }
