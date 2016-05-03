@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CG.Domain
 {
@@ -8,6 +9,7 @@ namespace CG.Domain
         public int IdUser { get; set; }
         public int ReviewScore { get; set; }
         public int ScoreGiven { get; set; }
+        [DataType(DataType.MultilineText)]
         public string Text { get; set; }
         public string Title { get; set; }
     }

@@ -27,5 +27,24 @@ namespace CityGuide.Controllers
             }
             return View(objective);
        }
+
+        public ActionResult AddReview()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddReview(Review review)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Reviews.Add(review);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
     }
 }

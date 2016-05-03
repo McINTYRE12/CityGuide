@@ -49,7 +49,7 @@ namespace FacebookAuth.Controllers
             return Redirect(loginUrl.AbsoluteUri);
         }
 
-        public ActionResult FacebookCallback(string code)
+        public ActionResult FacebookCallback(string code, string ReturnUrl)
         {
             var CurrentUser = new User();
             var fb = new FacebookClient();
@@ -82,9 +82,18 @@ namespace FacebookAuth.Controllers
             CurrentUser.FacebookID = me.id;
 
             db.AddUserToDB(CurrentUser);
+
             // Set the auth cookie
             FormsAuthentication.SetAuthCookie(CurrentUser.Email, false);
-            return RedirectToAction("Index", "Home");
+
+            if (Url.IsLocalUrl(ReturnUrl))
+            {
+                return Redirect(ReturnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }

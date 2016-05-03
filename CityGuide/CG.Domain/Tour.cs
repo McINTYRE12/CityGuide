@@ -10,5 +10,6 @@ namespace CG.Domain
         public virtual List<Objective> Objectives { get; set; }
         public virtual List<Photo> Transition_photos { get; set; }
         public int UserID { get; set; }
+        public int Rating { get; set; }
     }
 }
