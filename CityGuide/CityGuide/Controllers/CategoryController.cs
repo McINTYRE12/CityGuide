@@ -43,8 +43,6 @@ namespace CityGuide.Controllers
             else
                 ViewBag.Objectives = _objWorkerSvc.GetObjectivesFromCategory(id.Value, sortOrder);
 
-            ViewBag.test = _objWorkerSvc.testFunction();
-
             return View(category);
         }
         

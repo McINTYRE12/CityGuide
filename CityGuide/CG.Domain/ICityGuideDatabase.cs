@@ -8,6 +8,8 @@ namespace CG.Domain
         List<Objective> GetObjectivesFromCategory(int id);
         List<Category> GetAllCategories();
         List<Review> GetAllReviews();
+        Objective GetObjectiveByID(int ObjectiveID);
+        int GetUserIdFromFacebookID(string FacebookID);
 
         void Commit();
     }

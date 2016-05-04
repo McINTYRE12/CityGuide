@@ -147,6 +147,7 @@
     <Compile Include="Application\ObjectivesWorkerService.cs" />
     <Compile Include="Application\PhotosWorkerService.cs" />
     <Compile Include="Application\ReviewsWorkerService.cs" />
+    <Compile Include="Application\UsersWorkerService.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />

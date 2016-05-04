@@ -49,7 +49,7 @@ namespace FacebookAuth.Controllers
             return Redirect(loginUrl.AbsoluteUri);
         }
 
-        public ActionResult FacebookCallback(string code, string ReturnUrl)
+        public ActionResult FacebookCallback(string code)
         {
             var CurrentUser = new User();
             var fb = new FacebookClient();
@@ -81,19 +81,19 @@ namespace FacebookAuth.Controllers
             CurrentUser.LastName = me.last_name;
             CurrentUser.FacebookID = me.id;
 
+            Session["FacebookID"] = CurrentUser.FacebookID;
+
             db.AddUserToDB(CurrentUser);
 
             // Set the auth cookie
             FormsAuthentication.SetAuthCookie(CurrentUser.Email, false);
 
-            if (Url.IsLocalUrl(ReturnUrl))
+            if (Request.QueryString["ReturnURL"] != null)
             {
-                return Redirect(ReturnUrl);
+                return Redirect(Request.QueryString["ReturnURL"]);
             }
             else
-            {
                 return RedirectToAction("Index", "Home");
-            }
         }
     }
 }

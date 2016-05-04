@@ -12,5 +12,6 @@ namespace CG.Domain
         [DataType(DataType.MultilineText)]
         public string Text { get; set; }
         public string Title { get; set; }
+        public virtual Objective Objective { get; set; }
     }
 }

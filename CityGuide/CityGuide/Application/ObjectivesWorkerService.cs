@@ -88,10 +88,9 @@ namespace CityGuide.Application
             }
         }
 
-        [HttpPost]
-        public string testFunction(string sortOrder = "")
+        public Objective GetObjectiveByID(int ObjectiveID)
         {
-            return sortOrder;
+            return _db.GetObjectiveByID(ObjectiveID);
         }
     }
 }

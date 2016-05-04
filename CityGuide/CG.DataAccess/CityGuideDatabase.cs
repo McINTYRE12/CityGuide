@@ -31,6 +31,7 @@ namespace CG.DataAccess
 
             return cats.ToList();
         }
+
         public List<Objective> GetObjectivesFromCategory(int id)
         {
 
@@ -38,6 +39,7 @@ namespace CG.DataAccess
 
             return objs.Where(o => o.Category == id).ToList();
         }
+
         public List<Review> GetAllReviews()
         {
 
@@ -45,6 +47,7 @@ namespace CG.DataAccess
 
             return reviews.ToList();
         }
+
         public void AddUserToDB(User UserToAdd)
         {
             if(!_ctx.Users.Any(o => o.FacebookID == UserToAdd.FacebookID))
@@ -53,6 +56,16 @@ namespace CG.DataAccess
             }
 
             Commit();
+        }
+
+        public Objective GetObjectiveByID(int ObjectiveID)
+        {
+            return _ctx.Objectives.Where(c => c.Id == ObjectiveID).First();
+        }
+
+        public int GetUserIdFromFacebookID(string FacebookID)
+        {
+            return _ctx.Users.Where(c => c.FacebookID == FacebookID.ToString()).Select(c => c.Id).First();
         }
     }
 }
