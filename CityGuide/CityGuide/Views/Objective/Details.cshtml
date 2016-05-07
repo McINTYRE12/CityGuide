@@ -34,7 +34,7 @@
 </div>
 <div style="padding:2%">
     <h2 style="font-family:AlegryaSansRegular; font-weight: bold; color:#444877;">@Html.DisplayFor(model => model.Name)</h2>
-    <input id="input-7-xs" class="rating rating-loading" value="@Html.DisplayFor(model => model.Score)" data-min="0" data-max="5" data-step="1" data-size="xs"><hr />
+    <input name="my_input" value="3" id="rating_simple" type="hidden">
     <div>
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -95,8 +95,14 @@
     <script>
         var swiper = new Swiper('.swiper-container');
         $(document).ready(function() {
-            $("#input-id").rating({ displayOnly: true });
+            $("#rating_simple").webwidget_rating_simple({
+                rating_star_length: '5',
+                rating_initial_value: '@Html.DisplayFor(model => model.Score)',
+                rating_function_name: '',
+                directory: '../../Content/images/'
+            });
             $('#tab-container').easytabs();
         });
     </script>
+    
 </div>

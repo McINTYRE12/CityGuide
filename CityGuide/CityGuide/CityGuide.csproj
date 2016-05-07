@@ -185,6 +185,8 @@
     <Content Include="Content\dist\js\swiper.jquery.umd.min.js" />
     <Content Include="Content\dist\js\swiper.js" />
     <Content Include="Content\dist\js\swiper.min.js" />
+    <Content Include="Content\images\arrow-black.png" />
+    <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\food-white.png" />
     <Content Include="Content\images\food.png" />
     <Content Include="Content\images\hotel-white.png" />
@@ -194,8 +196,12 @@
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\nightlife-white.png" />
     <Content Include="Content\images\nightlife.png" />
+    <Content Include="Content\images\nst.gif" />
+    <Content Include="Content\images\nst1.gif" />
     <Content Include="Content\images\obiectiv-white.png" />
     <Content Include="Content\images\obiectiv.png" />
+    <Content Include="Content\images\sth.gif" />
+    <Content Include="Content\images\sth2.gif" />
     <Content Include="Content\images\tour-white.png" />
     <Content Include="Content\images\tour.png" />
     <Content Include="favicon.ico" />
