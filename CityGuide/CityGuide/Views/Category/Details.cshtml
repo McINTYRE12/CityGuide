@@ -6,34 +6,40 @@
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target=".main-menu" style="height:40px;">
+            <button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="height:40px;">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
             @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".user-menu" style="float:right !important;"><span class="glyphicon glyphicon-user white"></span></button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="float:right !important;"><span class="glyphicon glyphicon-user white"></span></button>
         </div>
-        <div class="navbar-collapse collapse main-menu">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-            </ul>
-        </div>
-        <div class="navbar-collapse collapse user-menu">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home1", "Index", "Home")</li>
-                <li>@Html.ActionLink("Login1", "Login", "Account")</li>
-                <li>@Html.ActionLink("About1", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact1", "Contact", "Home")</li>
-            </ul>
-        </div>
+        @if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        }
+        else
+        {
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        }
     </div>
 </div>
 <div class="category-header">
-    <img src="@Html.DisplayFor(model => model.IconUrl)" style="margin-left: 5px; margin-top: 8px;" /><span>@Html.DisplayFor(model => model.Name)</span>
+    <img src="@Html.DisplayFor(model => model.IconUrl)" class="category-icon" /><span class="category-name">@Html.DisplayFor(model => model.Name)</span>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
