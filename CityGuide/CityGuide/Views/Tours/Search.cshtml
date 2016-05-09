@@ -1,7 +1,7 @@
 ﻿@model List<CG.Domain.Tour>
 
 @{
-    ViewBag.Title = "TOURS";
+    ViewBag.Title = "SEARCH";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
@@ -51,19 +51,27 @@
                 <span class="glyphicon glyphicon-plus" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
             </a>
         </div>
-        <div style="height: 39px; width: 39px; float:right; text-align:center;">
-            <a href="Search">
+        <div style="height: 40px; width: 39px; float:right; text-align:center; background-color: #FFFFFF; border-left: 1px solid #BFC2D3; border-bottom: 1px solid #FFFFFF;">
                 <span class="glyphicon glyphicon-search center-block" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
-            </a>
         </div>
     </div>
-    <input type="checkbox" id="toggle-1" style="position: absolute;top: -9999px; left: -9999px;">
-    <div class="objectives-container" id="all-tours">
+
+    <div class="objectives-container" id="search-tours">
+        <div style="margin-top:15px;">
+            @using (Html.BeginForm())
+            {
+                <p>
+                    <input id="SearchString" name="SearchString" placeholder="Search Tours" type="text" value="" style="border: none; font-family:AlegryaSans">
+                    <input type="submit" value="Filter" />
+                </p>
+            }
+        </div>
+        <hr style="margin:0 auto;"/>
         @foreach (var o in Model)
         {
             <div class="objective-square">
                 <div class="objective-listing-photo">
-                    <img src="@o.Objectives[1].Photos[0].Url" style="float:left; height:100%; object-fit:cover; margin-right: 1px;" />
+                    <img src="@o.Objectives[0].Photos[0].Url" style="float:left; height:100%; object-fit:cover; margin-right: 1px;" />
                     <img src="@o.Objectives[1].Photos[0].Url" style="float:left; height:49%; object-fit:cover; margin-bottom: 1px;" />
                     <img src="@o.Objectives[2].Photos[0].Url" style="float:left; height:50%; object-fit:cover;" />
                 </div>
@@ -74,6 +82,7 @@
                 </div>
             </div>
         }
+
         <div style="clear:both"></div>
     </div>
 </div>

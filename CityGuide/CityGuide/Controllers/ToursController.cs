@@ -1,5 +1,6 @@
 ﻿using CG.DataAccess;
 using CG.Domain;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -15,6 +16,16 @@ namespace CityGuide.Controllers
         public ActionResult Index()
         {
             return View(db.Tours.ToList());
+        }
+
+        public ActionResult Search(string searchString)
+        {
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                return View(db.Tours.Where(s => s.Name.Contains(searchString)).ToList());
+            }
+            else
+                return View(db.Tours.ToList());
         }
 
         // GET: Tours/Details/5
