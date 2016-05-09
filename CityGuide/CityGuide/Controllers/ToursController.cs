@@ -12,7 +12,6 @@ namespace CityGuide.Controllers
         private CityGuideContext db = new CityGuideContext();
 
         // GET: Tours
-        [Authorize]
         public ActionResult Index()
         {
             return View(db.Tours.ToList());

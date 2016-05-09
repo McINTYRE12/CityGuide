@@ -201,7 +201,7 @@ textarea {
     }
 
 .objective-square img {
-    width: 40%;
+    width: 49%;
     height: 40%;
 }
 
@@ -407,4 +407,9 @@ textarea {
 
 .show-tick{
     margin-top: 2px;
+}
+
+.objective-listing-details h4{
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
