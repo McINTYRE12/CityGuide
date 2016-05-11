@@ -92,5 +92,16 @@ namespace CityGuide.Application
         {
             return _db.GetObjectiveByID(ObjectiveID);
         }
+
+        public List<ObjectiveViewModel> GetObjectivesForDropdown()
+        {
+            List<Objective> objs = _db.GetAllObjectives();
+
+            return objs.Select(o => new ObjectiveViewModel
+            {
+                Id = o.Id,
+                Name = o.Name
+            }).ToList();
+        }
     }
 }

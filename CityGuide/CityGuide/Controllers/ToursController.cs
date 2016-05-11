@@ -1,6 +1,9 @@
 ﻿using CG.DataAccess;
 using CG.Domain;
+using CityGuide.Application;
+using CityGuide.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -11,10 +14,15 @@ namespace CityGuide.Controllers
     public class ToursController : Controller
     {
         private CityGuideContext db = new CityGuideContext();
+        private ObjectivesWorkerService _objWorkerSvc;
 
-        // GET: Tours
-        public ActionResult Index()
+        public ToursController(ObjectivesWorkerService objService)
         {
+            _objWorkerSvc = objService;
+        }
+
+        public ActionResult Index()
+        { 
             return View(db.Tours.ToList());
         }
 
@@ -46,7 +54,9 @@ namespace CityGuide.Controllers
         // GET: Tours/Create
         public ActionResult Create()
         {
-            return View();
+            List<ObjectiveViewModel> objs = _objWorkerSvc.GetObjectivesForDropdown();
+
+            return View(objs);
         }
 
         // POST: Tours/Create
