@@ -47,9 +47,18 @@
     <span style="line-height:39px;">ADD TOUR</span>
 </div>
 
-<select>
+<select id="ddl_1">
     @foreach (var i in Model)
     {
         <option value="@i.Name">@i.Name</option>
     }
 </select>
+<p id="asd"></p>
+<button id="buttonTest">asdass</button>
+<script>
+    $(document).ready(function () {
+        $("#buttonTest").click(function () {
+            $('#ddl_1').clone().attr('id', 'newId').appendTo('#asd');
+        });
+    });
+</script>
