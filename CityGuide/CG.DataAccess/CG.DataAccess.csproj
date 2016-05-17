@@ -130,6 +130,10 @@
     <Compile Include="Migrations\201605021412115_Added tours rating.Designer.cs">
       <DependentUpon>201605021412115_Added tours rating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605170725367_Custom ObjectiveTours Table.cs" />
+    <Compile Include="Migrations\201605170725367_Custom ObjectiveTours Table.Designer.cs">
+      <DependentUpon>201605170725367_Custom ObjectiveTours Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -200,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605021412115_Added tours rating.resx">
       <DependentUpon>201605021412115_Added tours rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605170725367_Custom ObjectiveTours Table.resx">
+      <DependentUpon>201605170725367_Custom ObjectiveTours Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

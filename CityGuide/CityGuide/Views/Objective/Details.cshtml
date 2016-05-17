@@ -12,7 +12,6 @@
                 <span class="icon-bar"></span>
             </button>
             @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="float:right !important;"><span class="glyphicon glyphicon-user white"></span></button>
         </div>
         @if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
         {
@@ -100,7 +99,7 @@
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper('.swiper-container');
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#rating_simple").webwidget_rating_simple({
                 rating_star_length: '5',
                 rating_initial_value: '@Html.DisplayFor(model => model.Score)',
@@ -110,5 +109,5 @@
             $('#tab-container').easytabs();
         });
     </script>
-    
+
 </div>

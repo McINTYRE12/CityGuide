@@ -16,7 +16,6 @@
                 <span class="icon-bar"></span>
             </button>
             @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="float:right !important;"><span class="glyphicon glyphicon-user white"></span></button>
         </div>
         @if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
         {
@@ -46,19 +45,33 @@
     <img src="~/Content/images/tour.png" class="category-icon" />
     <span style="line-height:39px;">ADD TOUR</span>
 </div>
-
-<select id="ddl_1">
-    @foreach (var i in Model)
-    {
-        <option value="@i.Name">@i.Name</option>
-    }
-</select>
-<p id="asd"></p>
-<button id="buttonTest">asdass</button>
+<form>
+    <select id="objSelect">
+        @foreach (var i in Model)
+        {
+            <option value="@i.Id">@i.Name</option>
+        }
+    </select>
+    <select id="transportSelect">
+        <option value="1">Car</option>
+        <option value="2">Bus</option>
+        <option value="3">Walk</option>
+    </select>
+    <select id="objSelect">
+        @foreach (var i in Model)
+        {
+            <option value="@i.Id">@i.Name</option>
+        }
+    </select>
+    <button id="Submit" type="submit">Submit</button>
+    <button id="Submit" type="reset">Reset</button>
+</form>
+<button id="buttonTest">Add More</button>
 <script>
     $(document).ready(function () {
         $("#buttonTest").click(function () {
-            $('#ddl_1').clone().attr('id', 'newId').appendTo('#asd');
+            $('#transportSelect').clone().attr('id', 'transportSelect').insertAfter($('[id^="objSelect"]').last());
+            $('#objSelect').clone().attr('id', 'objSelect').insertAfter($('[id^="transportSelect"]').last());
         });
     });
 </script>

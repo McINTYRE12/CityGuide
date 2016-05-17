@@ -12,7 +12,6 @@
                 <span class="icon-bar"></span>
             </button>
             @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="float:right !important;"><span class="glyphicon glyphicon-user white"></span></button>
         </div>
         @if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
         {
@@ -85,7 +84,7 @@
 </div>
 
 <script>
-    $(".menu-toggle").click(function(e) {
+    $(".menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
