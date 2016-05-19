@@ -51,7 +51,7 @@ namespace CityGuide.Controllers
             return View(tour);
         }
 
-        // GET: Tours/Create
+        [Authorize]
         public ActionResult Create()
         {
             List<ObjectiveViewModel> objs = _objWorkerSvc.GetObjectivesForDropdown();
@@ -59,21 +59,32 @@ namespace CityGuide.Controllers
             return View(objs);
         }
 
-        // POST: Tours/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Stops,UserID")] Tour tour)
+        [Authorize]
+        public ActionResult Create(List<int> obj, List<int> transport)
         {
-            if (ModelState.IsValid)
+            var tour = new Tour();
+            var j = 0;
+            var objs = new List<Objective>();
+            tour.Transports = new List<int>();
+            tour.Objectives = new List<Objective>();
+
+            tour.Name = "test1";
+            tour.Stops = obj.Count();
+            tour.Rating = 3;
+            tour.UserID = 1;
+            tour.Transports.AddRange(transport);
+
+            foreach(var i in obj)
             {
-                db.Tours.Add(tour);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                objs.Add(db.Objectives.Where(o => o.Id == i).First());
             }
 
-            return View(tour);
+            tour.Objectives.AddRange(objs);
+
+            db.Tours.Add(tour);
+            db.SaveChanges();
+            return Index();
         }
 
         // GET: Tours/Edit/5

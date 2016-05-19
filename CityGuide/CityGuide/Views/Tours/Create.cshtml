@@ -45,33 +45,38 @@
     <img src="~/Content/images/tour.png" class="category-icon" />
     <span style="line-height:39px;">ADD TOUR</span>
 </div>
-<form>
-    <select id="objSelect">
+<form method="post">
+    <select id="objSelect" name="obj[0]">
         @foreach (var i in Model)
         {
             <option value="@i.Id">@i.Name</option>
         }
     </select>
-    <select id="transportSelect">
+    <select id="transportSelect" name="transport[0]">
         <option value="1">Car</option>
         <option value="2">Bus</option>
         <option value="3">Walk</option>
     </select>
-    <select id="objSelect">
+    <select id="objSelect" name="obj[1]">
         @foreach (var i in Model)
         {
             <option value="@i.Id">@i.Name</option>
         }
     </select>
     <button id="Submit" type="submit">Submit</button>
-    <button id="Submit" type="reset">Reset</button>
+    <button type="reset">Reset</button>
 </form>
 <button id="buttonTest">Add More</button>
 <script>
     $(document).ready(function () {
+        var i, j;
+        i = 1;
+        j = 0;
         $("#buttonTest").click(function () {
-            $('#transportSelect').clone().attr('id', 'transportSelect').insertAfter($('[id^="objSelect"]').last());
-            $('#objSelect').clone().attr('id', 'objSelect').insertAfter($('[id^="transportSelect"]').last());
+            i++;
+            j++;
+            $('#transportSelect').clone().attr('id', 'transportSelect').attr('name', 'transport[' + j + ']').insertAfter($('[id^="objSelect"]').last());
+            $('#objSelect').clone().attr('id', 'objSelect').attr('name', 'obj[' + i + ']').insertAfter($('[id^="transportSelect"]').last());
         });
     });
 </script>

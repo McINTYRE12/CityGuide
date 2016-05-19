@@ -9,13 +9,7 @@ namespace CG.Domain
         public int Stops { get; set; }
         public int UserID { get; set; }
         public int Rating { get; set; }
-    }
-
-    public class ObjectiveTour
-    {
-        public int Id { get; set; }
-        public int FromObj { get; set; }
-        public int ToObj { get; set; }
-        public int Transport { get; set; }
+        public virtual List<Objective> Objectives { get; set; }
+        public List<int> Transports { get; set; }
     }
 }
