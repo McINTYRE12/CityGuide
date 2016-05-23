@@ -39,7 +39,7 @@ namespace CityGuide.Controllers
             var FacebookID = Session["FacebookID"].ToString();
 
             review.Objective = ctx.Objectives.Where(c => c.Id == ObjectiveId).First();
-            review.IdUser = ctx.Users.Where(c => c.FacebookID == FacebookID.ToString()).Select(c => c.Id).First();
+            review.User = ctx.Users.Where(c => c.FacebookID == FacebookID.ToString()).First();
 
             if (ModelState.IsValid)
             {

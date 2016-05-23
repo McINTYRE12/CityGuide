@@ -11,9 +11,9 @@ namespace CityGuide.Application
             _db = db;
         }
 
-        public int GetUserIdFromFacebookID(string FacebookID)
+        public User GetUserFromFacebookID(string FacebookID)
         {
-            return _db.GetUserIdFromFacebookID(FacebookID);
+            return _db.GetUserFromFacebookID(FacebookID);
         }
 
     }

@@ -62,8 +62,15 @@
             <div class="objective-listing-details">
                 <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Objective")</h4>
                 <p style="font-family:AlegryaSans;">@o.Address</p>
-                <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; width: auto; margin-top:-10px;" />
-                <p style="font-family:AlegryaSans">"It's been great" <a href="#"> 32 Reviews</a></p>
+                <img src="~/Content/images/@o.Score stars.png" style="height:15px; width: auto; margin-top:-10px;" />
+                @if (o.Reviews.Count != 0)
+                {
+                    <p style="font-family:AlegryaSans">@o.Reviews[0].Text <a href="../../Objective/Details/@o.Id#tabs1-rev"> @o.Reviews.Count Reviews</a></p>
+                }
+                else
+                {
+                    <p style="font-family:AlegryaSans">Not enough reviews yet</p>
+                }
             </div>
         </div>
     }

@@ -26,5 +26,19 @@ namespace CityGuide.Application
                 Name = o.Name
             }).ToList();
         }
+
+        public List<TourViewModel> GetAllTours()
+        {
+            List<Tour> tours = _db.GetAllTours();
+
+            return tours.Select(o => new TourViewModel
+            {
+                Name = o.Name,
+                Id = o.Id, 
+                User = o.User,
+                Objectives = o.Objectives,
+                Stops = o.Stops
+            }).ToList();
+        }
     }
 }

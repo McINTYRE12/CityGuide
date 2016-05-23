@@ -134,6 +134,26 @@
     <Compile Include="Migrations\201605170725367_Custom ObjectiveTours Table.Designer.cs">
       <DependentUpon>201605170725367_Custom ObjectiveTours Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605211256403_trying to add primary key to association table.cs" />
+    <Compile Include="Migrations\201605211256403_trying to add primary key to association table.Designer.cs">
+      <DependentUpon>201605211256403_trying to add primary key to association table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605211315169_step2.cs" />
+    <Compile Include="Migrations\201605211315169_step2.Designer.cs">
+      <DependentUpon>201605211315169_step2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605220930364_Tied user to review.cs" />
+    <Compile Include="Migrations\201605220930364_Tied user to review.Designer.cs">
+      <DependentUpon>201605220930364_Tied user to review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605221015570_Tied user to tour.cs" />
+    <Compile Include="Migrations\201605221015570_Tied user to tour.Designer.cs">
+      <DependentUpon>201605221015570_Tied user to tour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605221049531_Changed transport handling method.cs" />
+    <Compile Include="Migrations\201605221049531_Changed transport handling method.Designer.cs">
+      <DependentUpon>201605221049531_Changed transport handling method.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -207,6 +227,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605170725367_Custom ObjectiveTours Table.resx">
       <DependentUpon>201605170725367_Custom ObjectiveTours Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605211256403_trying to add primary key to association table.resx">
+      <DependentUpon>201605211256403_trying to add primary key to association table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605211315169_step2.resx">
+      <DependentUpon>201605211315169_step2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605220930364_Tied user to review.resx">
+      <DependentUpon>201605220930364_Tied user to review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605221015570_Tied user to tour.resx">
+      <DependentUpon>201605221015570_Tied user to tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605221049531_Changed transport handling method.resx">
+      <DependentUpon>201605221049531_Changed transport handling method.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

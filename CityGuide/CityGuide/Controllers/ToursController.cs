@@ -14,16 +14,18 @@ namespace CityGuide.Controllers
     public class ToursController : Controller
     {
         private CityGuideContext db = new CityGuideContext();
-        private ObjectivesWorkerService _objWorkerSvc;
+        private ToursWorkerService _toursWorkerSvc;
+        private UsersWorkerService _usersWorkerSvc;
 
-        public ToursController(ObjectivesWorkerService objService)
+        public ToursController(ToursWorkerService toursService, UsersWorkerService usersService)
         {
-            _objWorkerSvc = objService;
+            _toursWorkerSvc = toursService;
+            _usersWorkerSvc = usersService;
         }
 
         public ActionResult Index()
-        { 
-            return View(db.Tours.ToList());
+        {
+            return View(_toursWorkerSvc.GetAllTours());
         }
 
         public ActionResult Search(string searchString)
@@ -54,25 +56,25 @@ namespace CityGuide.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            List<ObjectiveViewModel> objs = _objWorkerSvc.GetObjectivesForDropdown();
+            List<ObjectiveViewModel> objs = _toursWorkerSvc.GetObjectivesForDropdown();
 
             return View(objs);
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult Create(List<int> obj, List<int> transport)
+        public ActionResult Create(List<int> obj, List<Transport> transport)
         {
             var tour = new Tour();
             var j = 0;
             var objs = new List<Objective>();
-            tour.Transports = new List<int>();
+            tour.Transports = new List<Transport>();
             tour.Objectives = new List<Objective>();
 
             tour.Name = "test1";
             tour.Stops = obj.Count();
             tour.Rating = 3;
-            tour.UserID = 1;
+            tour.User = _usersWorkerSvc.GetUserFromFacebookID(Session["FacebookID"].ToString());
             tour.Transports.AddRange(transport);
 
             foreach(var i in obj)
@@ -84,7 +86,8 @@ namespace CityGuide.Controllers
 
             db.Tours.Add(tour);
             db.SaveChanges();
-            return Index();
+
+            return RedirectToAction("Index");
         }
 
         // GET: Tours/Edit/5

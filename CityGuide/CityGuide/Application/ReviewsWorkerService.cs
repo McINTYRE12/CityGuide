@@ -21,7 +21,7 @@ namespace CityGuide.Application
 
             return reviews.Select(r => new ReviewViewModel
             {
-                IdUser = r.IdUser,
+                User = r.User,
                 Id = r.Id,
                 ReviewScore = r.ReviewScore,
                 ScoreGiven = r.ScoreGiven

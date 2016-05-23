@@ -9,7 +9,8 @@ namespace CG.Domain
         List<Category> GetAllCategories();
         List<Review> GetAllReviews();
         Objective GetObjectiveByID(int ObjectiveID);
-        int GetUserIdFromFacebookID(string FacebookID);
+        User GetUserFromFacebookID(string FacebookID);
+        List<Tour> GetAllTours();
 
         void Commit();
     }

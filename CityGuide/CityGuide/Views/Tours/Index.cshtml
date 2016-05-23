@@ -1,4 +1,4 @@
-﻿@model List<CG.Domain.Tour>
+﻿@model List<CityGuide.ViewModels.TourViewModel>
 
 @{
     ViewBag.Title = "TOURS";
@@ -41,38 +41,50 @@
         }
     </div>
 </div>
-<div id="tab-container">
-    <div class="category-header">
-        <img src="~/Content/images/tour.png" class="category-icon" />
-        <span style="line-height:39px;">TOURS</span>
-        <div style="height: 39px; width:39px; float:right; border-left: 1px solid #BA952A; text-align:center; background-color:#EEBF31;">
-            <a href="Create">
-                <span class="glyphicon glyphicon-plus" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
-            </a>
-        </div>
-        <div style="height: 39px; width: 39px; float:right; text-align:center;">
-            <a href="Search">
-                <span class="glyphicon glyphicon-search center-block" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
-            </a>
-        </div>
+<div class="category-header">
+    <img src="~/Content/images/tour.png" class="category-icon" />
+    <span style="line-height:39px;">TOURS</span>
+    <div style="height: 39px; width:39px; float:right; border-left: 1px solid #BA952A; text-align:center; background-color:#EEBF31;">
+        <a href="Create">
+            <span class="glyphicon glyphicon-plus" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
+        </a>
     </div>
-    <input type="checkbox" id="toggle-1" style="position: absolute;top: -9999px; left: -9999px;">
-    <div class="objectives-container" id="all-tours">
-        @foreach (var o in Model)
-        {
-            <div class="objective-square">
-                <div class="objective-listing-photo">
-                    <img src="@o.Objectives[1].Photos[0].Url" style="float:left; height:100%; object-fit:cover; margin-right: 1px;" />
-                    <img src="@o.Objectives[1].Photos[0].Url" style="float:left; height:49%; object-fit:cover; margin-bottom: 1px;" />
-                    <img src="@o.Objectives[2].Photos[0].Url" style="float:left; height:50%; object-fit:cover;" />
-                </div>
-                <div class="objective-listing-details">
-                    <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Tours")</h4>
-                    <p style="font-family:AlegryaSans;">@o.Stops Stops</p>
-                    <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; width: auto; margin-top:-10px;" />
-                </div>
+    <div style="height: 39px; width: 39px; float:right; text-align:center;">
+        <a href="Search">
+            <span class="glyphicon glyphicon-search center-block" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
+        </a>
+    </div>
+</div>
+<input type="checkbox" id="toggle-1" style="position: absolute;top: -9999px; left: -9999px;">
+<div class="objectives-container" id="all-tours">
+    @foreach (var o in Model)
+    {
+        <div class="objective-square">
+            <div class="objective-listing-photo">
+                <img src="@o.Objectives[0].Photos[0].Url" style="float:left; height:100%; object-fit:cover; margin-right: 1px;" />
+                <img src="@o.Objectives[1].Photos[0].Url" style="float:left; height:49%; object-fit:cover; margin-bottom: 1px;" />
+                <img src="@o.Objectives[2].Photos[0].Url" style="float:left; height:50%; object-fit:cover;" />
             </div>
-        }
-        <div style="clear:both"></div>
-    </div>
+            <div class="objective-listing-details">
+                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Tours")</h4>
+                <p style="font-family:AlegryaSans;">
+                    @o.Stops Stops
+                    @if(o.Transports.Contains(1))
+                    {
+                        <img src="https://cdn3.iconfinder.com/data/icons/block/32/footsteps-512.png" style="height:10px"/>
+                    }
+                    @if (o.Transports.Contains(2))
+                    {
+                        <img src="https://cdn3.iconfinder.com/data/icons/block/32/footsteps-512.png" style="height:10px"/>
+                    }
+                    @if (o.Transports.Contains(3))
+                    {
+                        <img src="https://cdn3.iconfinder.com/data/icons/block/32/footsteps-512.png" style="height:10px"/>
+                    }
+                </p>
+                <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; width: auto; margin-top:-10px;" />
+            </div>
+        </div>
+    }
+    <div style="clear:both"></div>
 </div>

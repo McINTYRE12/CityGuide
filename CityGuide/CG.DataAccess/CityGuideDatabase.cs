@@ -18,6 +18,13 @@ namespace CG.DataAccess
             _ctx.SaveChanges();
         }
 
+        public List<Tour> GetAllTours()
+        {
+            IQueryable<Tour> tours = _ctx.Tours;
+
+            return tours.ToList();
+        }
+
         public List<Objective> GetAllObjectives()
         {
             IQueryable<Objective> objs = _ctx.Objectives;
@@ -63,9 +70,9 @@ namespace CG.DataAccess
             return _ctx.Objectives.Where(c => c.Id == ObjectiveID).First();
         }
 
-        public int GetUserIdFromFacebookID(string FacebookID)
+        public User GetUserFromFacebookID(string FacebookID)
         {
-            return _ctx.Users.Where(c => c.FacebookID == FacebookID.ToString()).Select(c => c.Id).First();
+            return _ctx.Users.Where(c => c.FacebookID == FacebookID.ToString()).First();
         }
     }
 }
