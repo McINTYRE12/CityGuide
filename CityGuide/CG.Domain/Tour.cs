@@ -9,7 +9,6 @@ namespace CG.Domain
         public int Stops { get; set; }
         public virtual User User { get; set; }
         public int Rating { get; set; }
-        public virtual List<Objective> Objectives { get; set; }
         public List<Transport> Transports { get; set; }
     }
 

@@ -32,10 +32,10 @@ namespace CityGuide.Controllers
         {
             if (!String.IsNullOrEmpty(searchString))
             {
-                return View(db.Tours.Where(s => s.Name.Contains(searchString)).ToList());
+                return View(_toursWorkerSvc.SearchTours(searchString));
             }
             else
-                return View(db.Tours.ToList());
+                return View(_toursWorkerSvc.GetAllTours());
         }
 
         // GET: Tours/Details/5
@@ -63,31 +63,32 @@ namespace CityGuide.Controllers
 
         [HttpPost]
         [Authorize]
-        public ActionResult Create(List<int> obj, List<Transport> transport)
+        public ActionResult Create(string TourTitle, List<int> obj, List<Transport> transport)
         {
             var tour = new Tour();
             var j = 0;
-            var objs = new List<Objective>();
+            var id = 0;
+            var ObjTours = new List<ObjectiveTour>();
             tour.Transports = new List<Transport>();
-            tour.Objectives = new List<Objective>();
 
-            tour.Name = "test1";
+            tour.Name = TourTitle;
             tour.Stops = obj.Count();
             tour.Rating = 3;
             tour.User = _usersWorkerSvc.GetUserFromFacebookID(Session["FacebookID"].ToString());
             tour.Transports.AddRange(transport);
 
-            foreach(var i in obj)
-            {
-                objs.Add(db.Objectives.Where(o => o.Id == i).First());
-            }
-
-            tour.Objectives.AddRange(objs);
-
             db.Tours.Add(tour);
             db.SaveChanges();
 
-            return RedirectToAction("Index");
+            id = _toursWorkerSvc.GetLastTourID();
+
+            foreach (var i in obj)
+            {
+                db.ObjectiveTour.Add(new ObjectiveTour { ObjectiveId = i, TourId = id, SortOrder = j++ });
+            }
+
+            db.SaveChanges();
+            return Redirect("/Tours/Index");
         }
 
         // GET: Tours/Edit/5

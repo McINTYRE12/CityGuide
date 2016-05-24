@@ -1,4 +1,4 @@
-﻿@model List<CG.Domain.Tour>
+﻿@model List<CityGuide.ViewModels.TourViewModel>
 
 @{
     ViewBag.Title = "SEARCH";
@@ -46,12 +46,14 @@
         <img src="~/Content/images/tour.png" class="category-icon" />
         <span style="line-height:39px;">TOURS</span>
         <div style="height: 39px; width:39px; float:right; border-left: 1px solid #BA952A; text-align:center; background-color:#EEBF31;">
-            <a href="Create">
+            <a href="@Url.Action("Create")">
                 <span class="glyphicon glyphicon-plus" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
             </a>
         </div>
         <div style="height: 40px; width: 39px; float:right; text-align:center; background-color: #FFFFFF; border-left: 1px solid #BFC2D3; border-bottom: 1px solid #FFFFFF;">
+            <a href="@Url.Action("Index")">
                 <span class="glyphicon glyphicon-search center-block" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
+            </a>
         </div>
     </div>
 
@@ -65,7 +67,7 @@
                 </p>
             }
         </div>
-        <hr style="margin:0 auto;"/>
+        <hr style="margin:0 auto;" />
         @foreach (var o in Model)
         {
             <div class="objective-square">
@@ -75,9 +77,18 @@
                     <img src="@o.Objectives[2].Photos[0].Url" style="float:left; height:50%; object-fit:cover;" />
                 </div>
                 <div class="objective-listing-details">
-                    <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Tours")</h4>
-                    <p style="font-family:AlegryaSans;">@o.Stops Stops</p>
-                    <img src="http://css-stars.com/wp-content/uploads/2013/12/4-stars.jpg" style="height:20px; width: auto; margin-top:-10px;" />
+                    <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name + " - " + o.User.FirstName + " " + o.User.LastName, "Details/" + (int)@o.Id, "Tours")</h4>
+                    <p style="font-family:AlegryaSans;">
+                        @o.Stops Stops
+                    </p>
+                    @if (o.Rating == 0)
+                {
+                        <p style="font-family:AlegryaSans;">Not enough reviews yet</p>
+                    }
+                    else
+                    {
+                        <img src="~/Content/images/@o.Rating stars.png" style="height:20px; width: auto; margin-top:-10px;" />
+                    }
                 </div>
             </div>
         }

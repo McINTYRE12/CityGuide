@@ -11,6 +11,8 @@ namespace CG.Domain
         Objective GetObjectiveByID(int ObjectiveID);
         User GetUserFromFacebookID(string FacebookID);
         List<Tour> GetAllTours();
+        List<Objective> GetObjectivesForTour(int id);
+        int GetLastTourId();
 
         void Commit();
     }

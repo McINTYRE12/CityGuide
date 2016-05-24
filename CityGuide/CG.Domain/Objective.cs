@@ -12,6 +12,13 @@ namespace CG.Domain
         public string Address { get; set; }
         public virtual List<Photo> Photos { get; set; }
         public virtual List<Review> Reviews { get; set; }
-        public virtual List<Tour> Tours { get; set; }
+    }
+
+    public class ObjectiveTour
+    {
+        public int Id { get; set; }
+        public int ObjectiveId { get; set; }
+        public int TourId { get; set; }
+        public int SortOrder { get; set; }
     }
 }

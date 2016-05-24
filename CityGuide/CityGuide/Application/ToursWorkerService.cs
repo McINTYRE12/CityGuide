@@ -34,9 +34,28 @@ namespace CityGuide.Application
             return tours.Select(o => new TourViewModel
             {
                 Name = o.Name,
-                Id = o.Id, 
+                Id = o.Id,
+                Objectives = _db.GetObjectivesForTour(o.Id),
                 User = o.User,
-                Objectives = o.Objectives,
+                Stops = o.Stops
+            }).ToList();
+        }
+
+        public int GetLastTourID()
+        {
+            return _db.GetLastTourId();
+        }
+
+        public List<TourViewModel> SearchTours(string name)
+        {
+            List<Tour> tours = _db.GetAllTours();
+
+            return tours.Where(o => o.Name.Contains(name)).Select(o => new TourViewModel
+            {
+                Name = o.Name,
+                Id = o.Id,
+                Objectives = _db.GetObjectivesForTour(o.Id),
+                User = o.User,
                 Stops = o.Stops
             }).ToList();
         }

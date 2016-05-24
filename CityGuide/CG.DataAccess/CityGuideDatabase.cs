@@ -74,5 +74,22 @@ namespace CG.DataAccess
         {
             return _ctx.Users.Where(c => c.FacebookID == FacebookID.ToString()).First();
         }
+
+        public List<Objective> GetObjectivesForTour(int id)
+        {
+            var ObjTour = _ctx.ObjectiveTour.Where(o => o.TourId == id).OrderBy(o => o.SortOrder).ToList();
+            var Objs = new List<Objective>();
+            foreach(var i in ObjTour)
+            {
+                Objs.Add(_ctx.Objectives.Where(o => o.Id == i.ObjectiveId).First());
+            }
+
+            return Objs;
+        }
+
+        public int GetLastTourId()
+        {
+            return _ctx.Tours.Max(t => t.Id);
+        }
     }
 }
