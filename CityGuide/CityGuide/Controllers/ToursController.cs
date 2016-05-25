@@ -38,19 +38,9 @@ namespace CityGuide.Controllers
                 return View(_toursWorkerSvc.GetAllTours());
         }
 
-        // GET: Tours/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Tour tour = db.Tours.Find(id);
-            if (tour == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tour);
+            return View(_toursWorkerSvc.GetTourById(id));
         }
 
         [Authorize]

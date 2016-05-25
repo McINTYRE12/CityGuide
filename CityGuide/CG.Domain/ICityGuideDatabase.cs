@@ -13,6 +13,7 @@ namespace CG.Domain
         List<Tour> GetAllTours();
         List<Objective> GetObjectivesForTour(int id);
         int GetLastTourId();
+        Tour GetTourById(int id);
 
         void Commit();
     }

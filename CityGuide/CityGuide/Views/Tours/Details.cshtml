@@ -1,4 +1,4 @@
-﻿@model CG.Domain.Tour
+﻿@model CityGuide.ViewModels.TourViewModel
 
 @{
     ViewBag.Title = "TOURS";
@@ -45,3 +45,9 @@
     <img src="~/Content/images/tour.png" class="category-icon" />
     <span style="line-height:39px;">TOURS</span>
 </div>
+
+@foreach(var i in Model.Objectives)
+{
+    <p>@i.Name</p>
+    <br /> 
+}

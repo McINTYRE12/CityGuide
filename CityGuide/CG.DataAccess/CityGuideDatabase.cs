@@ -91,5 +91,10 @@ namespace CG.DataAccess
         {
             return _ctx.Tours.Max(t => t.Id);
         }
+
+        public Tour GetTourById(int id)
+        {
+            return _ctx.Tours.Where(t => t.Id == id).First();
+        }
     }
 }

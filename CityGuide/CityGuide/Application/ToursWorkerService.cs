@@ -59,5 +59,21 @@ namespace CityGuide.Application
                 Stops = o.Stops
             }).ToList();
         }
+
+        public TourViewModel GetTourById(int id)
+        {
+            Tour tour = _db.GetTourById(id);
+            List<Objective> objectives = _db.GetObjectivesForTour(id);
+
+            return new TourViewModel
+            {
+                Name = tour.Name,
+                Objectives = objectives,
+                Id = tour.Id,
+                Rating = tour.Rating,
+                Stops = tour.Stops,
+                User = tour.User
+            };
+        }
     }
 }
