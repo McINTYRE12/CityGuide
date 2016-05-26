@@ -158,6 +158,30 @@
     <Compile Include="Migrations\201605240622356_Custom ObjectiveTour table.Designer.cs">
       <DependentUpon>201605240622356_Custom ObjectiveTour table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605261831133_Added transports table.cs" />
+    <Compile Include="Migrations\201605261831133_Added transports table.Designer.cs">
+      <DependentUpon>201605261831133_Added transports table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605261834220_Added name to transports table.cs" />
+    <Compile Include="Migrations\201605261834220_Added name to transports table.Designer.cs">
+      <DependentUpon>201605261834220_Added name to transports table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605261836143_Fixed transporttour.cs" />
+    <Compile Include="Migrations\201605261836143_Fixed transporttour.Designer.cs">
+      <DependentUpon>201605261836143_Fixed transporttour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605261843055_Removed transport list from tour.cs" />
+    <Compile Include="Migrations\201605261843055_Removed transport list from tour.Designer.cs">
+      <DependentUpon>201605261843055_Removed transport list from tour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605261847353_Changed photo to string in Transport.cs" />
+    <Compile Include="Migrations\201605261847353_Changed photo to string in Transport.Designer.cs">
+      <DependentUpon>201605261847353_Changed photo to string in Transport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605261919263_Adde transports list to tour.cs" />
+    <Compile Include="Migrations\201605261919263_Adde transports list to tour.Designer.cs">
+      <DependentUpon>201605261919263_Adde transports list to tour.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -249,6 +273,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605240622356_Custom ObjectiveTour table.resx">
       <DependentUpon>201605240622356_Custom ObjectiveTour table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605261831133_Added transports table.resx">
+      <DependentUpon>201605261831133_Added transports table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605261834220_Added name to transports table.resx">
+      <DependentUpon>201605261834220_Added name to transports table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605261836143_Fixed transporttour.resx">
+      <DependentUpon>201605261836143_Fixed transporttour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605261843055_Removed transport list from tour.resx">
+      <DependentUpon>201605261843055_Removed transport list from tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605261847353_Changed photo to string in Transport.resx">
+      <DependentUpon>201605261847353_Changed photo to string in Transport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605261919263_Adde transports list to tour.resx">
+      <DependentUpon>201605261919263_Adde transports list to tour.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

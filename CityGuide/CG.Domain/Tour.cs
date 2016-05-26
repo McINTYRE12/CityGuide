@@ -15,5 +15,15 @@ namespace CG.Domain
     public class Transport
     {
         public int Id { get; set; }
+        public string IconUrl { get; set; }
+        public string Name { get; set; }
+    }
+
+    public class TransportTour
+    {
+        public int Id { get; set; }
+        public int TransportId { get; set; }
+        public int TourId { get; set; }
+        public int SortOrder { get; set; }
     }
 }

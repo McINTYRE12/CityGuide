@@ -53,19 +53,17 @@ namespace CityGuide.Controllers
 
         [HttpPost]
         [Authorize]
-        public ActionResult Create(string TourTitle, List<int> obj, List<Transport> transport)
+        public ActionResult Create(string TourTitle, List<int> obj, List<int> transport)
         {
             var tour = new Tour();
             var j = 0;
             var id = 0;
             var ObjTours = new List<ObjectiveTour>();
-            tour.Transports = new List<Transport>();
 
             tour.Name = TourTitle;
             tour.Stops = obj.Count();
             tour.Rating = 3;
             tour.User = _usersWorkerSvc.GetUserFromFacebookID(Session["FacebookID"].ToString());
-            tour.Transports.AddRange(transport);
 
             db.Tours.Add(tour);
             db.SaveChanges();
@@ -75,6 +73,13 @@ namespace CityGuide.Controllers
             foreach (var i in obj)
             {
                 db.ObjectiveTour.Add(new ObjectiveTour { ObjectiveId = i, TourId = id, SortOrder = j++ });
+            }
+
+            j = 0;
+
+            foreach (var i in transport)
+            {
+                db.TransportTour.Add(new TransportTour { TransportId = i, TourId = id, SortOrder = j++ });
             }
 
             db.SaveChanges();

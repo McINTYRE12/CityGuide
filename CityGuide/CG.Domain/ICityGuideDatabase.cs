@@ -12,6 +12,7 @@ namespace CG.Domain
         User GetUserFromFacebookID(string FacebookID);
         List<Tour> GetAllTours();
         List<Objective> GetObjectivesForTour(int id);
+        List<Transport> GetTransportsForTour(int id);
         int GetLastTourId();
         Tour GetTourById(int id);
 

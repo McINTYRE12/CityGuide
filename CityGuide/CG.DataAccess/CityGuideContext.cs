@@ -21,5 +21,7 @@ namespace CG.DataAccess
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }
         public virtual DbSet<ObjectiveTour> ObjectiveTour { get; set; }
+        public virtual DbSet<Transport> Transports { get; set; }
+        public virtual DbSet<TransportTour> TransportTour { get; set; }
     }
 }

@@ -96,5 +96,17 @@ namespace CG.DataAccess
         {
             return _ctx.Tours.Where(t => t.Id == id).First();
         }
+
+        public List<Transport> GetTransportsForTour(int id)
+        {
+            var TransTour = _ctx.TransportTour.Where(o => o.TourId == id).OrderBy(o => o.SortOrder).ToList();
+            var Transports = new List<Transport>();
+            foreach (var i in TransTour)
+            {
+                Transports.Add(_ctx.Transports.Where(o => o.Id == i.TransportId).First());
+            }
+
+            return Transports;
+        }
     }
 }

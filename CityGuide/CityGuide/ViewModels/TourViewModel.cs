@@ -14,6 +14,6 @@ namespace CityGuide.ViewModels
         public User User { get; set; }
         public int Rating { get; set; }
         public virtual List<Objective> Objectives { get; set; }
-        public List<int> Transports { get; set; }
+        public List<Transport> Transports { get; set; }
     }
 }

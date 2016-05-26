@@ -64,12 +64,14 @@ namespace CityGuide.Application
         {
             Tour tour = _db.GetTourById(id);
             List<Objective> objectives = _db.GetObjectivesForTour(id);
+            List<Transport> transports = _db.GetTransportsForTour(id);
 
             return new TourViewModel
             {
                 Name = tour.Name,
                 Objectives = objectives,
                 Id = tour.Id,
+                Transports = transports,
                 Rating = tour.Rating,
                 Stops = tour.Stops,
                 User = tour.User

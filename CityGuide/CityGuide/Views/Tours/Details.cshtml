@@ -46,8 +46,14 @@
     <span style="line-height:39px;">TOURS</span>
 </div>
 
-@foreach(var i in Model.Objectives)
-{
-    <p>@i.Name</p>
-    <br /> 
+
+@{ 
+    var n = Model.Objectives.Count;
+    for(int i = 0; i < n - 1; i++)
+    {
+        @Html.Raw(Model.Objectives[i].Name + "<br />");
+        @Html.Raw("<img src=\"" + Model.Transports[i].IconUrl + "\" style=\"height:25px;\"><br />");
+
+    }
+    @Html.Raw(Model.Objectives[n - 1].Name + "<br />");
 }
