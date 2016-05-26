@@ -45,7 +45,7 @@ namespace CityGuide.Controllers
             {
                 ctx.Reviews.Add(review);
                 ctx.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details/" + ObjectiveId, "Objective");
             }
 
             return View();
