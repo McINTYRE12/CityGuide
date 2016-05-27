@@ -45,15 +45,33 @@
     <img src="~/Content/images/tour.png" class="category-icon" />
     <span style="line-height:39px;">TOURS</span>
 </div>
+<div class="tourContainer">
+    <h3>
+        @Html.DisplayFor(Model => Model.Name)
+        <br />
+        <img src="~/Content/images/@Model.Rating stars.png" style="height:15px; width: auto; margin-top:-10px;" />
+    </h3>
+    @{
+        var n = Model.Objectives.Count;
+        for (int i = 0; i < n - 1; i++)
+        {
+            <div class="objTour">
+                <div style="background:url(@Model.Objectives[i].Photos[0].Url) 50% 50% no-repeat; background-size: cover;" class="objective-listing-photo"></div>
+                <div class="objective-listing-details">
+                    <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Model.Objectives[i].Name</h4>
+                    <p style="font-family:AlegryaSans;">@Model.Objectives[i].Address</p>
+                </div>
+            </div>
+            @Html.Raw("<img src=\"" + Model.Transports[i].IconUrl + "\" style=\"height:25px;\">" + Model.Transports[i].Name + "<br />")
 
-
-@{ 
-    var n = Model.Objectives.Count;
-    for(int i = 0; i < n - 1; i++)
-    {
-        @Html.Raw(Model.Objectives[i].Name + "<br />");
-        @Html.Raw("<img src=\"" + Model.Transports[i].IconUrl + "\" style=\"height:25px;\"><br />");
-
+        }
+        <div class="objTour">
+            <div style="background:url(@Model.Objectives[n-1].Photos[0].Url) 50% 50% no-repeat; background-size: cover;" class="objective-listing-photo"></div>
+            <div class="objective-listing-details">
+                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Model.Objectives[n-1].Name</h4>
+                <p style="font-family:AlegryaSans;">@Model.Objectives[n-1].Address</p>
+            </div>
+        </div>
     }
-    @Html.Raw(Model.Objectives[n - 1].Name + "<br />");
-}
+</div>
+

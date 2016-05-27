@@ -107,9 +107,6 @@ textarea {
     background-size: cover;
 }
 
-.categoru-icon {
-}
-
 .sightseeing {
     border-width: 0px 1px 0px 0px;
     border-style: solid;
@@ -413,4 +410,29 @@ textarea {
 .objective-listing-details h4{
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.tourContainer{
+    margin-left: 10px;
+    font-family: AlegryaSansRegular; 
+}
+
+.tourContiner h3, .tourContainer h4{
+    font-weight: bold;
+}
+
+.objTour {
+    width: 100%;
+    float: left;
+    display: flex;
+}
+
+.objTour .objective-listing-photo
+{
+    margin:0;
+}
+
+.objTour .objective-listing-details
+{
+    padding-top: 0px;
 }
