@@ -436,3 +436,17 @@ textarea {
 {
     padding-top: 0px;
 }
+
+.verticalLine
+{
+    width: 1px;
+    background-color: black;
+    height:25px;
+    margin-top:70px;
+    margin-left:44px;
+}
+
+.bottomLine
+{
+    margin-top: 0px;
+}

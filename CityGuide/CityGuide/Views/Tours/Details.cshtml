@@ -59,10 +59,13 @@
                 <div style="background:url(@Model.Objectives[i].Photos[0].Url) 50% 50% no-repeat; background-size: cover;" class="objective-listing-photo"></div>
                 <div class="objective-listing-details">
                     <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Model.Objectives[i].Name</h4>
-                    <p style="font-family:AlegryaSans;">@Model.Objectives[i].Address</p>
+                    <p style="font-family:AlegryaSans;"><img src="~/Content/images/map-marker.png" style="width:10px" /> @Model.Objectives[i].Address</p>
                 </div>
             </div>
-            @Html.Raw("<img src=\"" + Model.Transports[i].IconUrl + "\" style=\"height:25px; padding: 5px; margin-left:32px; border: 1px solid black; border-radius: 50px;\">" + Model.Transports[i].Name + "<br />")
+            <br />
+            <div class="verticalLine"></div>
+            @Html.Raw("<img src=\"" + Model.Transports[i].IconUrl + "\" style=\"height:25px; width: 25px; padding: 2px; margin-left:32px; border: 1px solid black; border-radius: 50px;\"><b> " + Model.Transports[i].Name + "</b><br />")
+            <div class="verticalLine bottomLine"></div>
         }
         <div class="objTour">
             <div style="background:url(@Model.Objectives[n-1].Photos[0].Url) 50% 50% no-repeat; background-size: cover;" class="objective-listing-photo"></div>
