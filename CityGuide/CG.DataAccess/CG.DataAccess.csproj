@@ -182,6 +182,10 @@
     <Compile Include="Migrations\201605261919263_Adde transports list to tour.Designer.cs">
       <DependentUpon>201605261919263_Adde transports list to tour.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606022109500_Created tour reviews.cs" />
+    <Compile Include="Migrations\201606022109500_Created tour reviews.Designer.cs">
+      <DependentUpon>201606022109500_Created tour reviews.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -291,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605261919263_Adde transports list to tour.resx">
       <DependentUpon>201605261919263_Adde transports list to tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606022109500_Created tour reviews.resx">
+      <DependentUpon>201606022109500_Created tour reviews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

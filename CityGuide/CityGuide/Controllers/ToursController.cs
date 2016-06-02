@@ -51,6 +51,31 @@ namespace CityGuide.Controllers
             return View(objs);
         }
 
+        [Authorize]
+        public ActionResult AddReview()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddReview(TourReview review, int id)
+        {
+            var FacebookID = Session["FacebookID"].ToString();
+
+            review.Tour = db.Tours.Where(c => c.Id == id).First();
+            review.User = db.Users.Where(c => c.FacebookID == FacebookID.ToString()).First();
+
+            if (ModelState.IsValid)
+            {
+                db.TourReviews.Add(review);
+                db.SaveChanges();
+                return RedirectToAction("Details/" + id, "Tours");
+            }
+
+            return View();
+        }
+
         [HttpPost]
         [Authorize]
         public ActionResult Create(string TourTitle, List<int> obj, List<int> transport)

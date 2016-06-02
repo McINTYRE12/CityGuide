@@ -14,4 +14,12 @@ namespace CG.Domain
         public virtual Objective Objective { get; set; }
         public virtual User User { get; set; }
     }
+
+    public class TourReview
+    {
+        public int Id { get; set; }
+        public User User { get; set; }
+        public Tour Tour { get; set; }
+        public int ScoreGiven { get; set; }
+    }
 }

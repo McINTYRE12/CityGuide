@@ -6,7 +6,7 @@
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-
+@Html.Hidden("RedirectTo", Url.Action("AddReview", "Tours", new { id = Model.Id }));
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -53,16 +53,15 @@
     </h3>
     @{
         var n = Model.Objectives.Count;
-        <form>
-            @for (int i = 0; i < n - 1; i++)
-            {
+        for (int i = 0; i < n - 1; i++)
+        {
             <div class="objTour">
                 <div style="background:url(@Model.Objectives[i].Photos[0].Url) 50% 50% no-repeat; background-size: cover;" class="objective-listing-photo"></div>
                 <div class="objective-listing-details">
                     <h4 style="font-family:AlegryaSansRegular; font-weight: bold;"><a href="@Url.Action("Details", "Objective", new { id = Model.Objectives[i].Id})">@Model.Objectives[i].Name</a></h4>
                     <p style="font-family:AlegryaSans;"><img src="~/Content/images/map-marker.png" style="width:10px" /> @Model.Objectives[i].Address</p>
                     <div class="checkbox">
-                        <input id="check @i" type="checkbox" name="tourChecks[]" value="check @i">
+                        <input id="check @i" type="checkbox" name="tourChecks[]" value="check @i" class="tourObjectiveCheck">
                         <label for="check @i">Visited</label>
                     </div>
                 </div>
@@ -71,19 +70,27 @@
             <div class="verticalLine"></div>
             @Html.Raw("<img src=\"" + Model.Transports[i].IconUrl + "\" style=\"height:25px; width: 25px; padding: 2px; margin-left:32px; border: 1px solid black; border-radius: 50px;\"><b> " + Model.Transports[i].Name + "</b><br />")
             <div class="verticalLine bottomLine"></div>
-            }
-        </form>
+        }
+
         <div class="objTour">
             <div style="background:url(@Model.Objectives[n-1].Photos[0].Url) 50% 50% no-repeat; background-size: cover;" class="objective-listing-photo"></div>
             <div class="objective-listing-details">
-                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;"><a href="@Url.Action("Details", "Objective", new { id = Model.Objectives[n-1].Id})">@Model.Objectives[n-1].Name</a></h4>
+                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;"><a href="@Url.Action("Details", "Objective", new { id = Model.Objectives[n-1].Id})">@Model.Objectives[n - 1].Name</a></h4>
                 <p style="font-family:AlegryaSans;"><img src="~/Content/images/map-marker.png" style="width:10px" /> @Model.Objectives[n - 1].Address</p>
                 <div class="checkbox">
-                    <input id="check @n" type="checkbox" name="tourChecks[]" value="check @n">
+                    <input id="check @n" type="checkbox" name="tourChecks[]" value="check @n" class="tourObjectiveCheck">
                     <label for="check @n">Visited</label>
                 </div>
             </div>
         </div>
     }
 </div>
+<script>
+    $(".tourObjectiveCheck").change(function () {
+        if ($('.tourObjectiveCheck:checked').length == $('.tourObjectiveCheck').length) {
+            var url = $("#RedirectTo").val();
+            location.href = url;
+        }
+    });
+</script>
 
