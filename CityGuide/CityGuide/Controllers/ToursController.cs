@@ -66,7 +66,7 @@ namespace CityGuide.Controllers
             review.Tour = db.Tours.Where(c => c.Id == id).First();
             review.User = db.Users.Where(c => c.FacebookID == FacebookID.ToString()).First();
 
-            if (ModelState.IsValid)
+            if (review.ScoreGiven != 0)
             {
                 db.TourReviews.Add(review);
                 db.SaveChanges();
