@@ -173,12 +173,12 @@
     <Compile Include="ViewModels\TourViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-select.css" />
-    <Content Include="Content\bootstrap-select.min.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-select.css" />
+    <Content Include="Content\bootstrap\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\dist\css\star-rating.css" />
     <Content Include="Content\dist\css\star-rating.min.css" />
     <Content Include="Content\dist\css\swiper.css" />
@@ -196,6 +196,11 @@
     <Content Include="Content\dist\js\swiper.jquery.umd.min.js" />
     <Content Include="Content\dist\js\swiper.js" />
     <Content Include="Content\dist\js\swiper.min.js" />
+    <Content Include="Content\images\1 stars.png" />
+    <Content Include="Content\images\2 stars.png" />
+    <Content Include="Content\images\3 stars.png" />
+    <Content Include="Content\images\4 stars.png" />
+    <Content Include="Content\images\5 stars.png" />
     <Content Include="Content\images\arrow-black.png" />
     <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\food-white.png" />
@@ -205,6 +210,7 @@
     <Content Include="Content\images\login-background.png" />
     <Content Include="Content\images\login-button.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\map-marker.png" />
     <Content Include="Content\images\nightlife-white.png" />
     <Content Include="Content\images\nightlife.png" />
     <Content Include="Content\images\nst.gif" />
@@ -215,6 +221,7 @@
     <Content Include="Content\images\sth2.gif" />
     <Content Include="Content\images\tour-white.png" />
     <Content Include="Content\images\tour.png" />
+    <Content Include="Content\images\tourStar.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -230,12 +237,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css.map" />
     <Content Include="Scripts\bootstrap-select.js.map" />
-    <Content Include="Content\bootstrap-select.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-select.css.map" />
     <Content Include="Content\fonts\AlegreyaSans-Regular.otf" />
     <Content Include="Content\dist\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\dist\font-awesome\fonts\fontawesome-webfont.ttf" />
