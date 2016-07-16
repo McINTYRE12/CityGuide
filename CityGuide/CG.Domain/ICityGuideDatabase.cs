@@ -5,6 +5,7 @@ namespace CG.Domain
     public interface ICityGuideDatabase
     {
         List<Objective> GetAllObjectives();
+        List<TourReview> GetReviewsForTour(int id);
         List<Objective> GetObjectivesFromCategory(int id);
         List<Category> GetAllCategories();
         List<Review> GetAllReviews();

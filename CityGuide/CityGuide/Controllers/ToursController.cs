@@ -87,7 +87,7 @@ namespace CityGuide.Controllers
 
             tour.Name = TourTitle;
             tour.Stops = obj.Count();
-            tour.Rating = 3;
+            tour.Rating = 0;
             tour.User = _usersWorkerSvc.GetUserFromFacebookID(Session["FacebookID"].ToString());
 
             db.Tours.Add(tour);

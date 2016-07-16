@@ -40,6 +40,12 @@ textarea {
     padding-top: 15%;
     font-family: AlegryaSans;
     font-size: 12pt;
+    text-decoration: none;
+}
+
+.category-square a
+{
+    text-decoration: none !important;
 }
 
     .category-square img {
@@ -102,7 +108,7 @@ textarea {
 }
 
 .home-navbar {
-    background: url(http://www.rentalmotorbike.com/images/cities/Cluj-Napoca.jpg) center bottom;
+    background: url(https://i.ytimg.com/vi/p4MHbdrMXHM/maxresdefault.jpg) center bottom;
     height: 150px;
     background-size: cover;
 }
@@ -203,7 +209,7 @@ textarea {
 }
 
 .objectives-container p, h4 {
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 0px 0px;
     text-decoration-color: black;
 }
 
@@ -530,4 +536,33 @@ textarea {
     font-family:AlegryaSans !important;
     font-weight:bold;
     color: #323955;
+}
+
+.logoImg
+{
+    margin: 4px auto 0 auto;
+    display: block;
+    height: 50px;
+}
+
+.add-tour-div
+{
+    display:inline;
+    float:left;
+    max-width:280px;
+}
+
+.left
+{
+    margin-top:10px;
+    float:left;
+    width:20px; 
+    height:300px; 
+    background-color:black;
+    margin-left:10px;
+    margin-right:15px;
+}
+
+#objSelect:after
+{
 }

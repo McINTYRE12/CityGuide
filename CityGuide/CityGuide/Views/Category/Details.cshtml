@@ -11,7 +11,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <a href="/"><img src="~/Content/images/logo.png" class="logoImg" /></a>
         </div>
         @if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
         {
@@ -60,11 +60,11 @@
         <div class="objective-square">
             <div style="background:url(@o.Photos[0].Url) 50% 50% no-repeat; background-size: cover;" class="objective-listing-photo"></div>
             <div class="objective-listing-details">
-                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Objective")</h4>
+                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;"><a href="@Url.Action("Details/" + (int)@o.Id, "Objective")#tabs1-map">@o.Name</a></h4>
                 <p style="font-family:AlegryaSans;">@o.Address</p>
-                <img src="~/Content/images/@o.Score stars.png" style="height:15px; width: auto; margin-top:-10px;" />
                 @if (o.Reviews.Count != 0)
                 {
+                    <img src="~/Content/images/@o.Score stars.png" style="height:15px; width: auto; margin-top:-10px;" />
                     <p style="font-family:AlegryaSans">@o.Reviews[0].Text.Substring(0, 30)... <a href="../../Objective/Details/@o.Id#tabs1-rev"> @o.Reviews.Count Reviews</a></p>
                 }
                 else

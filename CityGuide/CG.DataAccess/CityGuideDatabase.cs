@@ -67,7 +67,10 @@ namespace CG.DataAccess
 
         public Objective GetObjectiveByID(int ObjectiveID)
         {
-            return _ctx.Objectives.Where(c => c.Id == ObjectiveID).First();
+            if (_ctx.Objectives.Where(c => c.Id == ObjectiveID).Any() != false)
+                return _ctx.Objectives.Where(c => c.Id == ObjectiveID).First();
+            else
+                return null;
         }
 
         public User GetUserFromFacebookID(string FacebookID)
@@ -107,6 +110,11 @@ namespace CG.DataAccess
             }
 
             return Transports;
+        }
+
+        public List<TourReview> GetReviewsForTour(int id)
+        {
+            return _ctx.TourReviews.Where(o => o.Tour.Id == id).ToList();
         }
     }
 }

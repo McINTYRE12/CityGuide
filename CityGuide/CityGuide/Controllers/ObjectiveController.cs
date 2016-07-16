@@ -5,24 +5,28 @@ using System.Web.Mvc;
 using CG.DataAccess;
 using CG.Domain;
 using CityGuide.Application;
+using CityGuide.ViewModels;
 
 namespace CityGuide.Controllers
 {
     public class ObjectiveController : Controller
     {
         private CityGuideContext ctx = new CityGuideContext();
+        private ObjectivesWorkerService _objWorkerSvc;
 
-        public ActionResult Details(int? id)
+        public ObjectiveController(ObjectivesWorkerService objService)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Objective objective = ctx.Objectives.Find(id);
+            _objWorkerSvc = objService;
+        }
+        public ActionResult Details(int id)
+        {
+            ObjectiveViewModel objective = _objWorkerSvc.GetObjectiveByID(id);
+
             if (objective == null)
             {
                 return HttpNotFound();
             }
+
             return View(objective);
         }
 

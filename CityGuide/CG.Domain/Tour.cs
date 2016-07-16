@@ -25,5 +25,6 @@ namespace CG.Domain
         public int TransportId { get; set; }
         public int TourId { get; set; }
         public int SortOrder { get; set; }
+        public string Info { get; set; }
     }
 }

@@ -27,6 +27,29 @@ namespace CityGuide.Application
             }).ToList();
         }
 
+        public int GetRatingOfTour(int id)
+        {
+            List<TourReview> reviews = _db.GetReviewsForTour(id);
+            var avg = 0;
+            var num = 0;
+
+            foreach (var rev in reviews)
+            {
+                num++;
+                avg += rev.ScoreGiven;
+            }
+            if (num != 0)
+            {
+                avg = avg / num;
+            }
+            else
+            {
+                avg = 0;
+            }
+
+            return avg;
+        }
+
         public List<TourViewModel> GetAllTours()
         {
             List<Tour> tours = _db.GetAllTours();
@@ -35,6 +58,7 @@ namespace CityGuide.Application
             {
                 Name = o.Name,
                 Id = o.Id,
+                Rating = GetRatingOfTour(o.Id),
                 Objectives = _db.GetObjectivesForTour(o.Id),
                 User = o.User,
                 Stops = o.Stops

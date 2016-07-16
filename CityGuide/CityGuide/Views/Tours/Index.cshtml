@@ -15,7 +15,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <a href="/"><img src="~/Content/images/logo.png" class="logoImg" /></a>
         </div>
         @if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
         {
@@ -66,7 +66,8 @@
                 <img src="@o.Objectives[2].Photos[0].Url" style="float:left; height:50%; object-fit:cover;" />
             </div>
             <div class="objective-listing-details">
-                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name + " - " + o.User.FirstName + " " + o.User.LastName, "Details/" + (int)@o.Id, "Tours")</h4>
+                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Tours")</h4>
+                <p style="font-family:AlegryaSans;">@o.User.FirstName @o.User.LastName</p>
                 <p style="font-family:AlegryaSans;">
                     @o.Stops Stops
                 </p>

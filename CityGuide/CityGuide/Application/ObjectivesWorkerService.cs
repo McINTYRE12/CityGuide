@@ -36,6 +36,27 @@ namespace CityGuide.Application
 
             List<Objective> objectives = _db.GetObjectivesFromCategory(id);
 
+            foreach(var obj in objectives)
+            {
+                var avg = 0;
+                var num = 0;
+
+                foreach(var rev in obj.Reviews)
+                {
+                    num++;
+                    avg += rev.ScoreGiven;
+                }
+                if (num != 0)
+                {
+                    avg = avg / num;
+                    obj.Score = avg;
+                }
+                else
+                {
+                    obj.Score = 0;
+                }
+            }
+
             var objs = objectives.Select(o => new ObjectiveViewModel
             {
                 Name = o.Name,
@@ -88,9 +109,35 @@ namespace CityGuide.Application
             }
         }
 
-        public Objective GetObjectiveByID(int ObjectiveID)
+        public ObjectiveViewModel GetObjectiveByID(int ObjectiveID)
         {
-            return _db.GetObjectiveByID(ObjectiveID);
+            var obj = _db.GetObjectiveByID(ObjectiveID);
+            if(obj == null)
+            {
+                return null;
+            }
+            var avg = 0;
+            var num = 0;
+
+            foreach(var rev in obj.Reviews)
+            {
+                avg += rev.ScoreGiven;
+                num++;
+            }
+            if (num == 0)
+                avg = 0;
+            else
+                avg = avg / num;
+            return new ObjectiveViewModel
+            {
+                Id = obj.Id,
+                Name = obj.Name,
+                Photos = obj.Photos,
+                Reviews = obj.Reviews,
+                Description = obj.Description,
+                Address = obj.Address,
+                Score = avg
+            };
         }
 
         public List<ObjectiveViewModel> GetObjectivesForDropdown()
