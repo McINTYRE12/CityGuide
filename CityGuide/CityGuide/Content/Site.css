@@ -215,12 +215,12 @@ textarea {
 
 @font-face {
     font-family: AlegryaSans;
-    src: url(../Content/fonts/AlegreyaSans-Regular.otf);
+    src: url(fonts/AlegreyaSans-Regular.otf);
 }
 
 @font-face {
     font-family: AlegryaSansRegular;
-    src: url(../Content/fonts/AlegreyaSans-Light.otf);
+    src: url(fonts/AlegreyaSans-Light.otf);
 }
 
 .objective-listing-photo {
