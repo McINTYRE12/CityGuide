@@ -1,7 +1,13 @@
-﻿
-@{
-    ViewBag.Title = "Error404";
+﻿@{
+    ViewBag.Title = "404";
 }
-
-<h2>Error404</h2>
-
+<div class="login-background">
+    <br />
+    <img src="~/Content/images/logo.png" style="display: block; margin-left: auto; margin-right: auto;" />
+    <br />
+    <h1 class="login-text">404</h1>
+    <p class="login-text">The page you requested does not exist</p>
+    <br />
+    <br />
+    <a id="text-back" href="@Url.Action("Index","Home")" style="text-decoration:none;">Home</a>
+</div>

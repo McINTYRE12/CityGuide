@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
-</head>
-<body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
-</body>
-</html>
+﻿@{
+    ViewBag.Title = "Error";
+}
+<div class="login-background">
+    <br />
+    <img src="~/Content/images/logo.png" style="display: block; margin-left: auto; margin-right: auto;" />
+    <br />
+    <h1 class="login-text">Error</h1>
+    <p class="login-text">There was an error processing your request</p>
+    <br />
+    <br />
+    <a id="text-back" href="@Url.Action("Index","Home")" style="text-decoration:none;">Home</a>
+</div>

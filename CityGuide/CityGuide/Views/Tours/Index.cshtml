@@ -1,0 +1,91 @@
+﻿@model List<CityGuide.ViewModels.CategoryViewModel>
+@{
+    ViewBag.Title = "Home Page";
+    int i = 0;
+}
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="height:40px;">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/"><img src="~/Content/images/logo.png" class="logoImg" /></a>
+        </div>
+        @if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        }
+        else
+        {
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        }
+    </div>
+</div>
+<div class="home-navbar">
+
+</div>
+<div class="main">
+    <div class="category-square sightseeing">
+        <a href="/Category/Details/1">
+            <img src="~/Content/images/obiectiv.png" />
+            <br />
+            SIGHTSEEING
+        </a>
+    </div>
+
+    <div class="category-square food">
+        <a href="/Category/Details/2">
+            <img src="~/Content/images/food.png" />
+            <br />
+            FOOD
+        </a>
+    </div>
+
+    <div class="category-square hotel">
+        <a href="/Category/Details/3">
+            <img src="~/Content/images/hotel.png" />
+            <br />
+            HOTEL
+        </a>
+    </div>
+
+    <div class="category-square nightlife">
+        <a href="/Category/Details/4">
+            <img src="~/Content/images/nightlife.png" />
+            <br />
+            NIGHTLIFE
+        </a>
+    </div>
+
+    <div class="category-square big tours">
+        <a href="/Tours/Index">
+            <img src="~/Content/images/tour.png" />
+            <br />
+            TOURS
+        </a>
+    </div>
+    <div style="clear: both"></div>
+</div>
+
+<script>
+    $(".menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>

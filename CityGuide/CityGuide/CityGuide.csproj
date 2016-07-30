@@ -160,6 +160,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ObjectiveController.cs" />
     <Compile Include="Controllers\ToursController.cs" />
@@ -204,6 +205,7 @@
     <Content Include="Content\images\5 stars.png" />
     <Content Include="Content\images\arrow-black.png" />
     <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\delete-icon.png" />
     <Content Include="Content\images\food-white.png" />
     <Content Include="Content\images\food.png" />
     <Content Include="Content\images\hotel-white.png" />
@@ -381,11 +383,11 @@
     <Content Include="Views\Objective\AddReview.cshtml" />
     <Content Include="Views\Tours\Search.cshtml" />
     <Content Include="Views\Tours\AddReview.cshtml" />
-    <Content Include="Views\Errors\Error404.cshtml" />
-    <Content Include="Views\Tours\Index.cshtml" />
     <Content Include="Views\Objective\Delete.cshtml" />
     <Content Include="Views\Objective\Edit.cshtml" />
     <Content Include="Views\Tours\Delete.cshtml" />
+    <Content Include="Views\Tours\Index.cshtml" />
+    <Content Include="Views\Errors\Error404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
