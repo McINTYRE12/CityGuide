@@ -1,8 +1,12 @@
-﻿@model List<CityGuide.ViewModels.CategoryViewModel>
+﻿@model List<CityGuide.ViewModels.TourViewModel>
+
 @{
-    ViewBag.Title = "Home Page";
-    int i = 0;
+    ViewBag.Title = "TOURS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
 <div class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -37,55 +41,46 @@
         }
     </div>
 </div>
-<div class="home-navbar">
-
+<div class="category-header">
+    <img src="~/Content/images/tour.png" class="category-icon" />
+    <span style="line-height:39px;">TOURS</span>
+    <div style="height: 39px; width:39px; float:right; border-left: 1px solid #BA952A; text-align:center; background-color:#EEBF31;">
+        <a href="@Url.Action("Create")">
+            <span class="glyphicon glyphicon-plus" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
+        </a>
+    </div>
+    <div style="height: 39px; width: 39px; float:right; text-align:center;">
+        <a href="@Url.Action("Search")">
+            <span class="glyphicon glyphicon-search center-block" style="font-family: 'Glyphicons Halflings'!important; line-height:39px;"></span>
+        </a>
+    </div>
 </div>
-<div class="main">
-    <div class="category-square sightseeing">
-        <a href="/Category/Details/1">
-            <img src="~/Content/images/obiectiv.png" />
-            <br />
-            SIGHTSEEING
-        </a>
-    </div>
-
-    <div class="category-square food">
-        <a href="/Category/Details/2">
-            <img src="~/Content/images/food.png" />
-            <br />
-            FOOD
-        </a>
-    </div>
-
-    <div class="category-square hotel">
-        <a href="/Category/Details/3">
-            <img src="~/Content/images/hotel.png" />
-            <br />
-            HOTEL
-        </a>
-    </div>
-
-    <div class="category-square nightlife">
-        <a href="/Category/Details/4">
-            <img src="~/Content/images/nightlife.png" />
-            <br />
-            NIGHTLIFE
-        </a>
-    </div>
-
-    <div class="category-square big tours">
-        <a href="/Tours/Index">
-            <img src="~/Content/images/tour.png" />
-            <br />
-            TOURS
-        </a>
-    </div>
-    <div style="clear: both"></div>
+<input type="checkbox" id="toggle-1" style="position: absolute;top: -9999px; left: -9999px;">
+<div class="objectives-container" id="all-tours">
+    @foreach (var o in Model)
+    {
+        <div class="objective-square">
+            <div class="objective-listing-photo">
+                <img src="@o.Objectives[0].Photos[0].Url" style="float:left; height:100%; object-fit:cover; margin-right: 1px;" />
+                <img src="@o.Objectives[1].Photos[0].Url" style="float:left; height:49%; object-fit:cover; margin-bottom: 1px;" />
+                <img src="@o.Objectives[2].Photos[0].Url" style="float:left; height:50%; object-fit:cover;" />
+            </div>
+            <div class="objective-listing-details">
+                <h4 style="font-family:AlegryaSansRegular; font-weight: bold;">@Html.ActionLink((string)o.Name, "Details/" + (int)@o.Id, "Tours")</h4>
+                <p style="font-family:AlegryaSans;">@o.User.FirstName @o.User.LastName</p>
+                <p style="font-family:AlegryaSans;">
+                    @o.Stops Stops
+                </p>
+                @if (o.Rating == 0)
+                {
+                    <p style="font-family:AlegryaSans;">Not enough reviews yet</p>
+                }
+                else
+                {
+                    <img src="~/Content/images/@o.Rating stars.png" style="height:20px; width: auto; margin-top:-10px;" />
+                }
+            </div>
+        </div>
+    }
+    <div style="clear:both"></div>
 </div>
-
-<script>
-    $(".menu-toggle").click(function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
