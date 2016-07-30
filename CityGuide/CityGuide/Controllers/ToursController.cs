@@ -129,6 +129,7 @@ namespace CityGuide.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [AdminAuthorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Tour tour = db.Tours.Find(id);

@@ -96,7 +96,7 @@
                         <p>
                             @if ((User.Identity.IsAuthenticated == true) && (Session["FacebookID"].ToString() == "997874320260010"))
                             {
-                                <a href="@Url.Action("DeleteReview/" + i.Id, "Objective")"><img src="~/Content/images/detele-icon.png" style="width: 10px;" /></a>
+                                <a href="@Url.Action("DeleteReview/" + i.Id, "Objective")"><img src="~/Content/images/delete-icon.png" style="width: 10px;" /></a>
                             }
                             @i.Title
                         </p>
