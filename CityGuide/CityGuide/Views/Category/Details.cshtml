@@ -65,11 +65,19 @@
                 @if (o.Reviews.Count != 0)
                 {
                     <img src="~/Content/images/@o.Score stars.png" style="height:15px; width: auto; margin-top:-10px;" />
-                    <p style="font-family:AlegryaSans">@o.Reviews[0].Text.Substring(0, 30)... <a href="../../Objective/Details/@o.Id#tabs1-rev"> @o.Reviews.Count Reviews</a></p>
+                    if(o.Reviews[0].Text.Length > 30)
+                    {
+                        <p style="font-family:AlegryaSans">"@o.Reviews[0].Text.Substring(0, 30)..." <a href="../../Objective/Details/@o.Id#tabs1-rev"> @o.Reviews.Count Reviews</a></p>
+
+                    }
+                    else
+                    {
+                        <p style="font-family:AlegryaSans">"@o.Reviews[0].Text"<a href="../../Objective/Details/@o.Id#tabs1-rev"> @o.Reviews.Count Reviews</a></p>
+                    }
                 }
                 else
                 {
-                    <p style="font-family:AlegryaSans">Not enough reviews yet</p>
+                <p style="font-family:AlegryaSans">Not enough reviews yet</p>
                 }
             </div>
         </div>
