@@ -60,9 +60,8 @@ namespace CG.DataAccess
             if(!_ctx.Users.Any(o => o.FacebookID == UserToAdd.FacebookID))
             {
                 _ctx.Users.Add(UserToAdd);
+                Commit();
             }
-
-            Commit();
         }
 
         public Objective GetObjectiveByID(int ObjectiveID)

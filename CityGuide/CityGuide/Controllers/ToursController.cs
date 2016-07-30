@@ -91,6 +91,7 @@ namespace CityGuide.Controllers
             tour.User = _usersWorkerSvc.GetUserFromFacebookID(Session["FacebookID"].ToString());
 
             db.Tours.Add(tour);
+            db.Entry(tour.User).State = EntityState.Unchanged;
             db.SaveChanges();
 
             id = _toursWorkerSvc.GetLastTourID();
@@ -111,38 +112,7 @@ namespace CityGuide.Controllers
             return Redirect("/Tours/Index");
         }
 
-        // GET: Tours/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Tour tour = db.Tours.Find(id);
-            if (tour == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tour);
-        }
-
-        // POST: Tours/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Stops,UserID")] Tour tour)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(tour).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(tour);
-        }
-
-        // GET: Tours/Delete/5
+        [AdminAuthorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -157,7 +127,6 @@ namespace CityGuide.Controllers
             return View(tour);
         }
 
-        // POST: Tours/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

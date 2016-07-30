@@ -6,6 +6,7 @@ using CG.DataAccess;
 using CG.Domain;
 using CityGuide.Application;
 using CityGuide.ViewModels;
+using System.Data.Entity;
 
 namespace CityGuide.Controllers
 {
@@ -53,6 +54,72 @@ namespace CityGuide.Controllers
             }
 
             return View();
+        }
+
+        [AdminAuthorize]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Objective obj = ctx.Objectives.Find(id);
+            if (obj == null)
+            {
+                return HttpNotFound();
+            }
+            return View(obj);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Objective obj = ctx.Objectives.Find(id);
+            ctx.Objectives.Remove(obj);
+            ctx.SaveChanges();
+            return RedirectToAction("Details/" + obj.Category, "Category", null);
+        }
+
+        [AdminAuthorize]
+        public ActionResult DeleteReview(int id)
+        {
+            Review rev = ctx.Reviews.Find(id);
+            ctx.Reviews.Remove(rev);
+            ctx.SaveChanges();
+            return RedirectToAction("Details/" + rev.Objective, "Objective", null);
+        }
+
+        [AdminAuthorize]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Objective objective = ctx.Objectives.Find(id);
+            if (objective == null)
+            {
+                return HttpNotFound();
+            }
+            return View(objective);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Description,Name,Score,Category,Address,Photos")] Objective objective)
+        {
+            if (ModelState.IsValid)
+            {
+                ctx.Entry(objective).State = EntityState.Modified;
+                foreach(var p in objective.Photos)
+                {
+                    ctx.Entry(p).State = EntityState.Modified;
+                }
+                ctx.SaveChanges();
+                return RedirectToAction("Details/" + objective.Category, "Category", null);
+            }
+            return View(objective);
         }
     }
 }

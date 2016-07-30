@@ -45,11 +45,14 @@
     <img src="~/Content/images/tour.png" class="category-icon" />
     <span style="line-height:39px;">ADD TOUR</span>
 </div>
-<div class="left"></div>
+
+<div class="left">
+    <div class="number">1</div>
+</div>
 <div class="add-tour-div">
     <form method="post" class="add-tour-form">
         <br />
-        <input type="text" name="TourTile" />
+        <input type="text" name="TourTitle" id="TourTitle"/>
         <br />
         <select id="objSelect" name="obj[0]">
             @foreach (var i in Model)
@@ -72,16 +75,34 @@
             }
         </select>
         <br />
-        <button id="Submit" type="submit">Submit</button>
-        <button type="reset">Reset</button>
+        <select id="transportSelect" name="transport[1]">
+            <option value="1">Car</option>
+            <option value="2">Bus</option>
+            <option value="3">Walk</option>
+        </select>
+        <input type="text" id="optionalInfo" name="info[1]" />
+        <br />
+        <select id="objSelect" name="obj[2]">
+            @foreach (var i in Model)
+            {
+                <option value="@i.Id">@i.Name</option>
+            }
+        </select>
+        <br />
+        <div id="buttons-wrap">
+            <span id="buttonTest" class="glyphicon glyphicon-plus" style="clear:both;"></span>
+            <span id="buttonTest">ADD MORE</span>
+        </div>
+        <br />
+        <button id="Submit" type="submit" class="btn btn-done">DONE</button>
+        <button type="reset" class="btn btn-cancel">CANCEL</button>
     </form>
-    <button id="buttonTest">Add More</button>
 </div>
 <script>
     $(document).ready(function () {
         var i, j;
-        i = 1;
-        j = 0;
+        i = 2;
+        j = 1;
         $("#buttonTest").click(function () {
             i++;
             j++;

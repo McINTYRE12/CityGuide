@@ -93,7 +93,13 @@
             {
                 <div class="review-container">
                     <div class="review-title">
-                        <p>@i.Title</p>
+                        <p>
+                            @if ((User.Identity.IsAuthenticated == true) && (Session["FacebookID"].ToString() == "997874320260010"))
+                            {
+                                <a href="@Url.Action("DeleteReview/" + i.Id, "Objective")"><img src="~/Content/images/detele-icon.png" style="width: 10px;" /></a>
+                            }
+                            @i.Title
+                        </p>
                         <img src="~/Content/images/@i.ScoreGiven stars.png" style="height:15px; margin-top:-10px;" />
 
                     </div>
