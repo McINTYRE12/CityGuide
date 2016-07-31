@@ -13,6 +13,7 @@ namespace CG.Domain
         public string Title { get; set; }
         public virtual Objective Objective { get; set; }
         public virtual User User { get; set; }
+        public string Date { get; set; }
     }
 
     public class TourReview

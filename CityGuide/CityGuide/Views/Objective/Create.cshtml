@@ -6,7 +6,6 @@
 
 <h2>Create</h2>
 
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -48,17 +47,54 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Photos, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" id="photo" name="photo[0]" class = "form-control" placeholder="Photo URL"/>
+            </div>
+            <button type="button" id="btnAddPhotos" style="margin-left: 15px; margin-top:5px;">Add more photos</button>
+            <button type="button" id="btnRemovePhoto" style="margin-left: 15px; margin-top:5px;">Remove photo slot</button>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" id="lat" name="lat" placeholder="Latitude"/>
+            </div>
+            <div class="col-md-10">
+                <input type="text" id="lon" name="lon" placeholder="Longitude"/>
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-
+<script>
+    $(document).ready(function () {
+        var i;
+        i = 0;
+        $("#btnAddPhotos").click(function () {
+            i++;
+            $('#photo').clone().attr('id', 'photo').attr('class', 'form-control').attr('name', 'photo[' + i + ']').insertAfter($('[id^="photo"]').last()).before("<br />");
+        });
+        $("#btnRemovePhoto").click(function () {
+            $('[name="photo[' + i + ']"]').remove();
+            $('br').remove();
+            i--;
+        });
+    });
+</script>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

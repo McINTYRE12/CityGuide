@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using CG.Domain;
+using System.Data.Entity.Spatial;
 
 namespace CityGuide.ViewModels
 {
@@ -16,5 +17,6 @@ namespace CityGuide.ViewModels
         public string Address { get; set; }
         public virtual List<Photo> Photos { get; set; }
         public virtual List<Review> Reviews { get; set; }
+        public DbGeography Location { get; set; }
     }
 }

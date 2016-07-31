@@ -78,7 +78,7 @@ namespace CityGuide.Controllers
 
         [HttpPost]
         [Authorize]
-        public ActionResult Create(string TourTitle, List<int> obj, List<int> transport)
+        public ActionResult Create(string TourTitle, List<int> obj, List<int> transport, List<String> info)
         {
             var tour = new Tour();
             var j = 0;
@@ -105,7 +105,7 @@ namespace CityGuide.Controllers
 
             foreach (var i in transport)
             {
-                db.TransportTour.Add(new TransportTour { TransportId = i, TourId = id, SortOrder = j++ });
+                db.TransportTour.Add(new TransportTour { TransportId = i, Info = info[j], TourId = id, SortOrder = j++});
             }
 
             db.SaveChanges();

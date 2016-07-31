@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity.Spatial;
 
 namespace CG.Domain
 {
@@ -12,6 +13,7 @@ namespace CG.Domain
         public string Address { get; set; }
         public virtual List<Photo> Photos { get; set; }
         public virtual List<Review> Reviews { get; set; }
+        public DbGeography Location { get; set; }
     }
 
     public class ObjectiveTour

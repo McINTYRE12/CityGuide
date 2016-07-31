@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CG.Domain
 {
@@ -16,6 +17,7 @@ namespace CG.Domain
         List<Transport> GetTransportsForTour(int id);
         int GetLastTourId();
         Tour GetTourById(int id);
+        List<String> GetAdditionalInfoForTour(int id);
 
         void Commit();
     }

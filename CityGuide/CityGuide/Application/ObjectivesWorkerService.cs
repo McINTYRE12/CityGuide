@@ -27,7 +27,8 @@ namespace CityGuide.Application
                 Score = o.Score,
                 Id = o.Id,
                 Reviews = o.Reviews,
-                Address = o.Address
+                Address = o.Address,
+                Location = o.Location
             }).ToList();
         }
         [HttpPost]
@@ -40,11 +41,13 @@ namespace CityGuide.Application
             {
                 var avg = 0;
                 var num = 0;
-
-                foreach(var rev in obj.Reviews)
+                if (obj.Reviews.Any())
                 {
-                    num++;
-                    avg += rev.ScoreGiven;
+                    foreach (var rev in obj.Reviews)
+                    {
+                        num++;
+                        avg += rev.ScoreGiven;
+                    }
                 }
                 if (num != 0)
                 {
@@ -64,7 +67,8 @@ namespace CityGuide.Application
                 Score = o.Score,
                 Id = o.Id,
                 Reviews = o.Reviews,
-                Address = o.Address
+                Address = o.Address,
+                Location = o.Location
             }).ToList();
 
             switch (sortOrder)
@@ -93,7 +97,8 @@ namespace CityGuide.Application
                 Score = o.Score,
                 Id = o.Id,
                 Reviews = o.Reviews,
-                Address = o.Address
+                Address = o.Address,
+                Location = o.Location
             }).ToList();
 
             switch (sortOrder)
@@ -136,7 +141,8 @@ namespace CityGuide.Application
                 Reviews = obj.Reviews,
                 Description = obj.Description,
                 Address = obj.Address,
-                Score = avg
+                Score = avg,
+                Location = obj.Location
             };
         }
 

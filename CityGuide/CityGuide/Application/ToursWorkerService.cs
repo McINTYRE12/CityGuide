@@ -89,6 +89,7 @@ namespace CityGuide.Application
             Tour tour = _db.GetTourById(id);
             List<Objective> objectives = _db.GetObjectivesForTour(id);
             List<Transport> transports = _db.GetTransportsForTour(id);
+            List<String> info = _db.GetAdditionalInfoForTour(id);
 
             return new TourViewModel
             {
@@ -96,9 +97,10 @@ namespace CityGuide.Application
                 Objectives = objectives,
                 Id = tour.Id,
                 Transports = transports,
-                Rating = tour.Rating,
+                Rating = GetRatingOfTour(tour.Id),
                 Stops = tour.Stops,
-                User = tour.User
+                User = tour.User,
+                Info = info
             };
         }
     }

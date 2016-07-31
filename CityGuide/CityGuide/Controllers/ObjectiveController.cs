@@ -7,6 +7,9 @@ using CG.Domain;
 using CityGuide.Application;
 using CityGuide.ViewModels;
 using System.Data.Entity;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity.Spatial;
 
 namespace CityGuide.Controllers
 {
@@ -42,9 +45,11 @@ namespace CityGuide.Controllers
         public ActionResult AddReview(Review review, int ObjectiveId)
         {
             var FacebookID = Session["FacebookID"].ToString();
+            DateTime date = DateTime.Now;
 
             review.Objective = ctx.Objectives.Where(c => c.Id == ObjectiveId).First();
             review.User = ctx.Users.Where(c => c.FacebookID == FacebookID.ToString()).First();
+            review.Date = date.ToString("MMMM dd, yyyy");
 
             if (ModelState.IsValid)
             {
@@ -85,9 +90,10 @@ namespace CityGuide.Controllers
         public ActionResult DeleteReview(int id)
         {
             Review rev = ctx.Reviews.Find(id);
+            Objective obj = ctx.Objectives.Where(o => o.Reviews.Select(r => r.Id).Contains(rev.Id)).First();
             ctx.Reviews.Remove(rev);
             ctx.SaveChanges();
-            return RedirectToAction("Details/" + rev.Objective, "Objective", null);
+            return RedirectToAction("Details/" + obj.Id, "Objective", null);
         }
 
         [AdminAuthorize]
@@ -119,6 +125,33 @@ namespace CityGuide.Controllers
                 ctx.SaveChanges();
                 return RedirectToAction("Details/" + objective.Category, "Category", null);
             }
+            return View(objective);
+        }
+
+        [AdminAuthorize]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Description,Name,Score,Category,Address")] Objective objective, List<String> photo, string lon, string lat)
+        {
+            objective.Photos = new List<Photo>();
+            objective.Location = DbGeography.FromText("POINT(" + lat + " " + lon + ")");
+            foreach (var p in photo)
+            {
+                objective.Photos.Add(new Photo() { Url = p });
+            }
+            if (ModelState.IsValid)
+            {
+                ctx.Objectives.Add(objective);
+                ctx.SaveChanges();
+                return RedirectToAction("Details/" + objective.Category, "Category", null);
+            }
+
             return View(objective);
         }
     }

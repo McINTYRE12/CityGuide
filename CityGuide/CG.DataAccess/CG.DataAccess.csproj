@@ -190,6 +190,14 @@
     <Compile Include="Migrations\201607111600458_Added info to transport tour.Designer.cs">
       <DependentUpon>201607111600458_Added info to transport tour.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607302248519_added date to reviews.cs" />
+    <Compile Include="Migrations\201607302248519_added date to reviews.Designer.cs">
+      <DependentUpon>201607302248519_added date to reviews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607310138502_added location to objectives.cs" />
+    <Compile Include="Migrations\201607310138502_added location to objectives.Designer.cs">
+      <DependentUpon>201607310138502_added location to objectives.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -305,6 +313,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607111600458_Added info to transport tour.resx">
       <DependentUpon>201607111600458_Added info to transport tour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607302248519_added date to reviews.resx">
+      <DependentUpon>201607302248519_added date to reviews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607310138502_added location to objectives.resx">
+      <DependentUpon>201607310138502_added location to objectives.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

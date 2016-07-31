@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CG.Domain;
+using System;
 
 namespace CG.DataAccess
 {
@@ -114,6 +115,11 @@ namespace CG.DataAccess
         public List<TourReview> GetReviewsForTour(int id)
         {
             return _ctx.TourReviews.Where(o => o.Tour.Id == id).ToList();
+        }
+
+        public List<String> GetAdditionalInfoForTour(int id)
+        {
+            return _ctx.TransportTour.Where(p => p.TourId == id).Select(o => o.Info).ToList();
         }
     }
 }

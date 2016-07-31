@@ -24,7 +24,8 @@ namespace CityGuide.Application
                 User = r.User,
                 Id = r.Id,
                 ReviewScore = r.ReviewScore,
-                ScoreGiven = r.ScoreGiven
+                ScoreGiven = r.ScoreGiven,
+                Date = r.Date
             }).ToList();
         }
     }

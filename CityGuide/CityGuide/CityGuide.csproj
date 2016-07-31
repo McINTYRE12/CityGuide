@@ -375,7 +375,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Category\Details.cshtml" />
-    <Content Include="Views\Objective\Create.cshtml" />
     <Content Include="Views\Objective\Details.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Tours\Create.cshtml" />
@@ -386,8 +385,9 @@
     <Content Include="Views\Objective\Delete.cshtml" />
     <Content Include="Views\Objective\Edit.cshtml" />
     <Content Include="Views\Tours\Delete.cshtml" />
-    <Content Include="Views\Tours\Index.cshtml" />
     <Content Include="Views\Errors\Error404.cshtml" />
+    <Content Include="Views\Tours\Index.cshtml" />
+    <Content Include="Views\Objective\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

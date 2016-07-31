@@ -23,8 +23,6 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </div>
         }
@@ -34,8 +32,6 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </div>
         }
@@ -47,12 +43,11 @@
 </div>
 
 <div class="left">
-    <div class="number">1</div>
 </div>
 <div class="add-tour-div">
     <form method="post" class="add-tour-form">
         <br />
-        <input type="text" name="TourTitle" id="TourTitle"/>
+        <input type="text" name="TourTitle" id="TourTitle" placeholder="Tour name"/>
         <br />
         <select id="objSelect" name="obj[0]">
             @foreach (var i in Model)
@@ -66,7 +61,7 @@
             <option value="2">Bus</option>
             <option value="3">Walk</option>
         </select>
-        <input type="text" id="optionalInfo" name="info[0]" />
+        <input type="text" id="optionalInfo" name="info[0]" placeholder="Additional info" />
         <br />
         <select id="objSelect" name="obj[1]">
             @foreach (var i in Model)
@@ -80,8 +75,7 @@
             <option value="2">Bus</option>
             <option value="3">Walk</option>
         </select>
-        <input type="text" id="optionalInfo" name="info[1]" />
-        <br />
+        <input type="text" id="optionalInfo" name="info[1]" placeholder="Additional info"/>
         <select id="objSelect" name="obj[2]">
             @foreach (var i in Model)
             {
